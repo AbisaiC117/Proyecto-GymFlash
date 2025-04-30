@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GymFlash
+namespace GymFlash.View
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para HomeWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class HomeWindow : Window
     {
-        public MainWindow()
+        public HomeWindow()
         {
             InitializeComponent();
         }
