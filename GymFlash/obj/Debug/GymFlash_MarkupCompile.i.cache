@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Ingenieria de Software\Universidad 4to Semestre\Programacion Visual .NET\Proyecto-GymFlash\GymFlash\obj\Debug\
+D:\OneDrive\Desktop\Proyecto-GymFlash\GymFlash\obj\Debug\
 GymFlash
 none
 false
 DEBUG;TRACE
-C:\Ingenieria de Software\Universidad 4to Semestre\Programacion Visual .NET\Proyecto-GymFlash\GymFlash\App.xaml
-3-58701526
+D:\OneDrive\Desktop\Proyecto-GymFlash\GymFlash\App.xaml
+5205126997
 
-13-1638514259
+15-1924823122
 13-1310406943
-View\HomeWindow.xaml;View\MainWindow.xaml;View\Membresia.xaml;
+View\HomeWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;View\Membresia.xaml;View\SignupWindow.xaml;
 
 True
 

@@ -15,29 +15,13 @@ using System.Windows.Shapes;
 namespace GymFlash.View
 {
     /// <summary>
-    /// Lógica de interacción para Membresia.xaml
+    /// Lógica de interacción para SignupWindow.xaml
     /// </summary>
-    public partial class Membresia : Window
+    public partial class SignupWindow : Window
     {
-        public Membresia()
+        public SignupWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Inicio(object sender, RoutedEventArgs e)
-        {
-            HomeWindow HomeWindow = new HomeWindow();
-            HomeWindow.Show();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

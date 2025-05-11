@@ -1,5 +1,4 @@
-﻿using GymFlash.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,38 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using GymFlash.View;
 
 namespace GymFlash
 {
-    /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new LoginViewModel();
         }
 
-        private void Entrar_Click(object sender, RoutedEventArgs e)
+        private void Login_Click(object sender, RoutedEventArgs e)
         {
-            string usuario = txtUsuario.Text;
-            string contraseña = txtContraseña.Password;
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+        }
 
-            if (usuario == "admin" && contraseña == "1234")
-            {
-                var ventana = new View.HomeWindow(); // Asegúrate de tener el using correcto o namespace completo
-                ventana.Show();
-                this.Close(); // Cierra ventana actual si quieres
-            }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrectos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+        private void Signup_Click(object sender, RoutedEventArgs e)
+        {
+            SignupWindow signupWindow = new SignupWindow();
+            signupWindow.Show();
         }
     }
 }

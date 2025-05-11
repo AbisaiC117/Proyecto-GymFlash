@@ -23,5 +23,11 @@ namespace GymFlash.View
         {
             InitializeComponent();
         }
+
+        private void Membresia_Button(object sender, RoutedEventArgs e)
+        {
+            Membresia Membresia = new Membresia();
+            Membresia.Show();
+        }
     }
 }
