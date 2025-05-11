@@ -1,8 +1,16 @@
 ﻿<Window x:Class="GymFlash.View.HomeWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:GymFlash.View"
         Title="Gym Flash" Height="800" Width="1000"
-        WindowStartupLocation="CenterScreen" Background="White">
+        WindowStartupLocation="CenterScreen" Background="White"
+        WindowState="Maximized"
+        ResizeMode="CanResize">
+
+    <Window.Resources>
+        <local:WidthToHeightConverter x:Key="WidthToHeightConverter"/>
+    </Window.Resources>
+
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel>
 
@@ -10,36 +18,53 @@
             <DockPanel Background="#8B0000" Height="60" VerticalAlignment="Top">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,0">
                     <Button Content="Inicio" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Click="Membresia_Button" />
-                    <Button Content="Membresías" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Margin="20,0,0,0" Click="Membresia_Button"/>
+                    <Button Content="Membresías" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Margin="20,0,0,0"/>
                     <Button Content="Rutinas" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Margin="20,0,0,0"/>
                     <Button Content="Mi ID" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Margin="20,0,0,0"/>
                 </StackPanel>
             </DockPanel>
 
-            <!-- Imagen principal -->
-            <Image Source="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" Height="300" Stretch="Fill"/>
-            <TextBlock Text="Gym Flash" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10"/>
-            <TextBlock Text="1% mejores cada día" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-            <Button Content="INSCRÍBEME" Width="120" Height="30" HorizontalAlignment="Center" Background="#800000" Foreground="White"/>
+            <!-- Imagen principal responsive -->
+            <Grid>
+                <!-- Imagen de fondo -->
+                <Image Source="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b"
+           Stretch="UniformToFill"
+           Height="{Binding ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Converter={StaticResource WidthToHeightConverter}}" />
+
+                <!-- Contenido superpuesto -->
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="Gym Flash" FontSize="28" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" Margin="0,10"/>
+                    <TextBlock Text="1% mejores cada día" FontSize="16" Foreground="Black" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                    <Button Content="INSCRÍBEME" Width="120" Height="30" HorizontalAlignment="Center" Background="#800000" Foreground="White"/>
+                </StackPanel>
+            </Grid>
 
             <!-- Nuestro equipo -->
             <TextBlock Text="Nuestro equipo" FontSize="24" FontWeight="Bold" Margin="20,30,0,10"/>
             <UniformGrid Columns="3" Margin="10">
-                <StackPanel Margin="10">
-                    <Image Source="https://images.unsplash.com/photo-1599058917212-d750089bc65b" Height="150" Stretch="Fill"/>
-                    <TextBlock Text="Anastase Margos" FontWeight="Bold"/>
-                    <TextBlock Text="Trainer Ms. Olympia"/>
-                </StackPanel>
-                <StackPanel Margin="10">
-                    <Image Source="https://images.unsplash.com/photo-1594737625785-c8aa03f7f5a0" Height="150" Stretch="Fill"/>
-                    <TextBlock Text="Karla Souza" FontWeight="Bold"/>
-                    <TextBlock Text="Personal Trainer desde 2014"/>
-                </StackPanel>
-                <StackPanel Margin="10">
-                    <Image Source="https://images.unsplash.com/photo-1598188305693-f58c80c0d539" Height="150" Stretch="Fill"/>
-                    <TextBlock Text="Hayley Kim" FontWeight="Bold"/>
-                    <TextBlock Text="Especialista en calistenia"/>
-                </StackPanel>
+                <Border BorderThickness="1" BorderBrush="Gray" Padding="10" CornerRadius="8" Margin="10">
+                    <StackPanel>
+                        <Image Source="https://images.unsplash.com/photo-1599058917212-d750089bc65b" Height="150" Stretch="UniformToFill" Margin="0,0,0,10"/>
+                        <TextBlock Text="Anastase Margos" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Trainer Ms. Olympia" FontStyle="Italic" FontSize="14" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderThickness="1" BorderBrush="Gray" Padding="10" CornerRadius="8" Margin="10">
+                    <StackPanel>
+                        <Image Source="https://images.unsplash.com/photo-1594737625785-c8aa03f7f5a0" Height="150" Stretch="UniformToFill" Margin="0,0,0,10"/>
+                        <TextBlock Text="Karla Souza" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Personal Trainer desde 2014" FontStyle="Italic" FontSize="14" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderThickness="1" BorderBrush="Gray" Padding="10" CornerRadius="8" Margin="10">
+                    <StackPanel>
+                        <Image Source="https://images.unsplash.com/photo-1598188305693-f58c80c0d539" Height="150" Stretch="UniformToFill" Margin="0,0,0,10"/>
+                        <TextBlock Text="Hayley Kim" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Especialista en calistenia" FontStyle="Italic" FontSize="14" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
             </UniformGrid>
 
             <!-- Mapa -->
@@ -51,21 +76,29 @@
             <TextBlock Text="Reseñas" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20"/>
             <TextBlock Text="¡La gente ama esto!" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,20"/>
             <UniformGrid Columns="3" Margin="20">
-                <StackPanel>
-                    <TextBlock Text="Todas las máquinas están en excelente estado y el personal es super amable!" TextWrapping="Wrap"/>
-                    <TextBlock Text="★★★★★" Foreground="Gold" FontSize="20"/>
-                    <TextBlock Text="Flavio Uriel" FontStyle="Italic"/>
-                </StackPanel>
-                <StackPanel>
-                    <TextBlock Text="¡Me encanta la música que ponen y el estacionamiento es muy amplio!" TextWrapping="Wrap"/>
-                    <TextBlock Text="★★★★★" Foreground="Gold" FontSize="20"/>
-                    <TextBlock Text="Emiliana DSM" FontStyle="Italic"/>
-                </StackPanel>
-                <StackPanel>
-                    <TextBlock Text="¡A este precio, nadie se compara; qué servicio tan completo!" TextWrapping="Wrap"/>
-                    <TextBlock Text="★★★★★" Foreground="Gold" FontSize="20"/>
-                    <TextBlock Text="Abisaí Cordova" FontStyle="Italic"/>
-                </StackPanel>
+                <Border Background="#FFF8DC" CornerRadius="8" Padding="10" Margin="10" BorderBrush="DarkGray" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="Todas las máquinas están en excelente estado y el personal es super amable!" TextWrapping="Wrap"/>
+                        <TextBlock Text="★★★★★" Foreground="Gold" FontSize="20"/>
+                        <TextBlock Text="Flavio Uriel" FontStyle="Italic" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#FFF8DC" CornerRadius="8" Padding="10" Margin="10" BorderBrush="DarkGray" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="¡Me encanta la música que ponen y el estacionamiento es muy amplio!" TextWrapping="Wrap"/>
+                        <TextBlock Text="★★★★★" Foreground="Gold" FontSize="20"/>
+                        <TextBlock Text="Emiliana DSM" FontStyle="Italic" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#FFF8DC" CornerRadius="8" Padding="10" Margin="10" BorderBrush="DarkGray" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="¡A este precio, nadie se compara; qué servicio tan completo!" TextWrapping="Wrap"/>
+                        <TextBlock Text="★★★★★" Foreground="Gold" FontSize="20"/>
+                        <TextBlock Text="Abisaí Cordova" FontStyle="Italic" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </Border>
             </UniformGrid>
 
         </StackPanel>

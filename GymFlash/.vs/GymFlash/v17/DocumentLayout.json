@@ -1,12 +1,52 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\OneDrive\\Desktop\\Proyecto-GymFlash\\GymFlash\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|d:\\onedrive\\desktop\\proyecto-gymflash\\gymflash\\view\\homewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|solutionrelative:view\\homewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|d:\\onedrive\\desktop\\proyecto-gymflash\\gymflash\\view\\membresia.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|solutionrelative:view\\membresia.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeWindow.xaml",
+              "DocumentMoniker": "D:\\OneDrive\\Desktop\\Proyecto-GymFlash\\GymFlash\\View\\HomeWindow.xaml",
+              "RelativeDocumentMoniker": "View\\HomeWindow.xaml",
+              "ToolTip": "D:\\OneDrive\\Desktop\\Proyecto-GymFlash\\GymFlash\\View\\HomeWindow.xaml",
+              "RelativeToolTip": "View\\HomeWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-11T20:10:31.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Membresia.xaml",
+              "DocumentMoniker": "D:\\OneDrive\\Desktop\\Proyecto-GymFlash\\GymFlash\\View\\Membresia.xaml",
+              "RelativeDocumentMoniker": "View\\Membresia.xaml",
+              "ToolTip": "D:\\OneDrive\\Desktop\\Proyecto-GymFlash\\GymFlash\\View\\Membresia.xaml",
+              "RelativeToolTip": "View\\Membresia.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-11T20:09:35.127Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

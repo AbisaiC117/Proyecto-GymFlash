@@ -64,6 +64,7 @@
     <Compile Include="View\SignupWindow.xaml.cs">
       <DependentUpon>SignupWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\WidthToHeightConverter.cs" />
     <Page Include="View\HomeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
