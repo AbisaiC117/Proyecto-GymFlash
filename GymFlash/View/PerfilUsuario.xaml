@@ -11,8 +11,8 @@
     <Grid>
         <!-- Menú superior -->
         <DockPanel Background="#7A1B1B" Height="40" VerticalAlignment="Top">
-            <TextBlock Text="Inicio" FontWeight="Bold" Foreground="White" Margin="10,0" VerticalAlignment="Center" />
-            <TextBlock Text="Membresías" Margin="80,0,0,0" Foreground="#CCAAAA" VerticalAlignment="Center" />
+            <TextBlock Text="Huevos" FontWeight="Bold" Foreground="White" Margin="10,0" VerticalAlignment="Center" />
+            <TextBlock Text="leche" Margin="80,0,0,0" Foreground="#CCAAAA" VerticalAlignment="Center" />
             <TextBlock Text="Rutinas" Margin="170,0,0,0" Foreground="#CCAAAA" VerticalAlignment="Center" />
             <TextBlock Text="Perfil" Margin="250,0,0,0" Foreground="White" VerticalAlignment="Center" TextDecorations="Underline"/>
         </DockPanel>
