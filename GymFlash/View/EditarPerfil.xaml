@@ -37,14 +37,12 @@
             <TextBlock Text="IMC"/>
             <TextBox x:Name="txtIMC" Text="38%" Margin="0,5"/>
 
-            <!-- Vigencia -->
-            <TextBlock Text="Vigencia (dd/MM/yyyy)"/>
-            <TextBox x:Name="txtVigencia" Text="12/05/2025" Margin="0,5"/>
+    
 
             <!-- Botones -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-                <Button Content="Guardar" Width="100" Margin="5" Click="Guardar_Click"/>
-                <Button Content="Cancelar" Width="100" Margin="5" Click="Cancelar_Click"/>
+                <Button Content="Guardar" Width="100" Margin="5" Click="Guardar_Click" Background="GreenYellow"/>
+                <Button Content="Cancelar" Width="100" Margin="5" Click="Cancelar_Click" Background="IndianRed"/>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -14,5 +14,11 @@ namespace GymFlash.View
             EditarPerfil ventanaEditar = new EditarPerfil();
             ventanaEditar.ShowDialog();
         }
+        private void CompartirPerfil_Click(object sender, RoutedEventArgs e)
+        {
+            CompartirPerfil ventanaCompartir = new CompartirPerfil();
+            ventanaCompartir.ShowDialog();
+        }
+
     }
 }

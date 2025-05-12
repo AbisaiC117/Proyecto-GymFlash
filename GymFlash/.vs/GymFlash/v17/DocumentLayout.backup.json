@@ -1,13 +1,41 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\OneDrive\\Desktop\\Proyecto-GymFlash\\GymFlash\\",
+  "WorkspaceRootPath": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|d:\\onedrive\\desktop\\proyecto-gymflash\\gymflash\\view\\homewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|c:\\users\\abisa\\pictures\\screenshots\\programacion .net\\proyecto-gymflash\\gymflash\\view\\compartirperfil.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|solutionrelative:view\\compartirperfil.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\view\\editarperfil.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|solutionrelative:view\\editarperfil.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|c:\\users\\abisa\\pictures\\screenshots\\programacion .net\\proyecto-gymflash\\gymflash\\view\\editarperfil.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|solutionrelative:view\\editarperfil.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|c:\\users\\abisa\\pictures\\screenshots\\programacion .net\\proyecto-gymflash\\gymflash\\view\\compartirperfil.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|solutionrelative:view\\compartirperfil.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\view\\perfilusuario.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|solutionrelative:view\\perfilusuario.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\view\\perfilusuario.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|solutionrelative:view\\perfilusuario.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\view\\signupwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|solutionrelative:view\\signupwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\view\\homewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|solutionrelative:view\\homewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|d:\\onedrive\\desktop\\proyecto-gymflash\\gymflash\\view\\membresia.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\view\\membresia.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6F89D4BD-A993-46BA-82A9-7C649B61A5E2}|GymFlash.csproj|solutionrelative:view\\membresia.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -18,15 +46,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CompartirPerfil.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\CompartirPerfil.xaml.cs",
+              "RelativeDocumentMoniker": "View\\CompartirPerfil.xaml.cs",
+              "ToolTip": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\CompartirPerfil.xaml.cs",
+              "RelativeToolTip": "View\\CompartirPerfil.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T00:50:12.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CompartirPerfil.xaml",
+              "DocumentMoniker": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\CompartirPerfil.xaml",
+              "RelativeDocumentMoniker": "View\\CompartirPerfil.xaml",
+              "ToolTip": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\CompartirPerfil.xaml",
+              "RelativeToolTip": "View\\CompartirPerfil.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-12T00:34:57.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditarPerfil.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\EditarPerfil.xaml.cs",
+              "RelativeDocumentMoniker": "View\\EditarPerfil.xaml.cs",
+              "ToolTip": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\EditarPerfil.xaml.cs",
+              "RelativeToolTip": "View\\EditarPerfil.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T00:20:44.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditarPerfil.xaml",
+              "DocumentMoniker": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\EditarPerfil.xaml",
+              "RelativeDocumentMoniker": "View\\EditarPerfil.xaml",
+              "ToolTip": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\EditarPerfil.xaml",
+              "RelativeToolTip": "View\\EditarPerfil.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-12T00:19:45.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PerfilUsuario.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\PerfilUsuario.xaml.cs",
+              "RelativeDocumentMoniker": "View\\PerfilUsuario.xaml.cs",
+              "ToolTip": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\PerfilUsuario.xaml.cs",
+              "RelativeToolTip": "View\\PerfilUsuario.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T00:17:11.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PerfilUsuario.xaml",
+              "DocumentMoniker": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\PerfilUsuario.xaml",
+              "RelativeDocumentMoniker": "View\\PerfilUsuario.xaml",
+              "ToolTip": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\PerfilUsuario.xaml",
+              "RelativeToolTip": "View\\PerfilUsuario.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-11T23:28:32.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SignupWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\SignupWindow.xaml",
+              "RelativeDocumentMoniker": "View\\SignupWindow.xaml",
+              "ToolTip": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\SignupWindow.xaml",
+              "RelativeToolTip": "View\\SignupWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-11T23:26:18.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "HomeWindow.xaml",
-              "DocumentMoniker": "D:\\OneDrive\\Desktop\\Proyecto-GymFlash\\GymFlash\\View\\HomeWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\HomeWindow.xaml",
               "RelativeDocumentMoniker": "View\\HomeWindow.xaml",
-              "ToolTip": "D:\\OneDrive\\Desktop\\Proyecto-GymFlash\\GymFlash\\View\\HomeWindow.xaml",
+              "ToolTip": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\HomeWindow.xaml",
               "RelativeToolTip": "View\\HomeWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-05-11T20:10:31.014Z",
@@ -34,15 +149,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "Membresia.xaml",
-              "DocumentMoniker": "D:\\OneDrive\\Desktop\\Proyecto-GymFlash\\GymFlash\\View\\Membresia.xaml",
+              "DocumentMoniker": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\Membresia.xaml",
               "RelativeDocumentMoniker": "View\\Membresia.xaml",
-              "ToolTip": "D:\\OneDrive\\Desktop\\Proyecto-GymFlash\\GymFlash\\View\\Membresia.xaml",
+              "ToolTip": "C:\\Users\\abisa\\Pictures\\Screenshots\\programacion .net\\Proyecto-GymFlash\\GymFlash\\View\\Membresia.xaml",
               "RelativeToolTip": "View\\Membresia.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-11T20:09:35.127Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T20:09:35.127Z"
             }
           ]
         }
