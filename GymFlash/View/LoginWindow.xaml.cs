@@ -26,26 +26,8 @@ namespace GymFlash
         public LoginWindow()
         {
             InitializeComponent();
-            DataContext = new LoginViewModel();
+            DataContext = new LoginWindowModel();
         }
-
-        private void Entrar_Click(object sender, RoutedEventArgs e)
-        {
-            string usuario = txtUsuario.Text;
-            string contraseña = txtContraseña.Password;
-
-            if (usuario == "admin" && contraseña == "1234")
-            {
-                var ventana = new View.HomeWindow(); // Asegúrate de tener el using correcto o namespace completo
-                ventana.Show();
-                this.Close(); // Cierra ventana actual si quieres
-            }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrectos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
-
         private void Volver_Button(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -58,5 +40,13 @@ namespace GymFlash
             signupWindow.Show();
             this.Close();
         }
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is LoginWindowModel vm)
+            {
+                vm.Contrasena = ((PasswordBox)sender).Password;
+            }
+        }
     }
 }
+

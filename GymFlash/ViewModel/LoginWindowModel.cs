@@ -1,14 +1,18 @@
 ﻿using System.ComponentModel;
+using System.Net;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using System.Windows.Input;
+using GymFlash.Repositories;
 using GymFlash.View;
 
 namespace GymFlash.ViewModel
 {
-    public class LoginViewModel : INotifyPropertyChanged
+    public class LoginWindowModel:ViewModelBase
     {
         private string _usuario;
         private string _contrasena;
+        private readonly UserRepository _userRepository;
 
         public string Usuario
         {
@@ -24,20 +28,20 @@ namespace GymFlash.ViewModel
 
         public ICommand EntrarCommand { get; }
 
-        public LoginViewModel()
+        public LoginWindowModel()
         {
             EntrarCommand = new RelayCommand(Entrar);
         }
 
         private void Entrar(object parametro)
         {
-            if (Usuario == "admin" && Contrasena == "1234")
+            var credential = new NetworkCredential(Usuario, Contrasena);
+
+            if (_userRepository.AuthenticateUser(credential))
             {
-                // Aquí puedes abrir una nueva ventana, por ejemplo HomeWindow
                 var ventana = new HomeWindow();
                 ventana.Show();
 
-                // Cerrar la ventana actual
                 foreach (var win in System.Windows.Application.Current.Windows)
                 {
                     if (win is MainWindow)
@@ -46,7 +50,7 @@ namespace GymFlash.ViewModel
             }
             else
             {
-                System.Windows.MessageBox.Show("Credenciales incorrectas");
+                MessageBox.Show("Credenciales incorrectas");
             }
         }
 

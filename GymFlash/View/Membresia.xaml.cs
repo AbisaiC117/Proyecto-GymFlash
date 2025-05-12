@@ -28,18 +28,30 @@ namespace GymFlash.View
         {
             HomeWindow HomeWindow = new HomeWindow();
             HomeWindow.Show();
+            this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Membresia(object sender, RoutedEventArgs e)
         {
-
+            HomeWindow HomeWindow = new HomeWindow();
+            HomeWindow.Show();
+            this.Close();
         }
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+
+        private void Button_Rutinas(object sender, RoutedEventArgs e)
         {
-
+            RutinasWindow ventanaRutinas = new RutinasWindow();
+            ventanaRutinas.Show();
+            this.Close();
+        }
+        private void Button_Perfil(object sender, RoutedEventArgs e)
+        {
+            PerfilUsuario ventanaPerfil = new PerfilUsuario();
+            ventanaPerfil.Show();
+            this.Close();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Button_Tienda(object sender, RoutedEventArgs e)
         {
 
         }
