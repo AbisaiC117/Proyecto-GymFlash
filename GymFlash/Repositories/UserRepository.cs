@@ -9,7 +9,7 @@ using GymFlash.Model;
 
 namespace GymFlash.Repositories
 {
-    internal class UserRepository : RepositoryBase, IUserRepository
+    public class UserRepository : RepositoryBase, IUserRepository
     {
         public void Add(UserModel userModel)
         {
@@ -50,7 +50,38 @@ namespace GymFlash.Repositories
 
         public UserModel GetByUsername(string username)
         {
-            throw new NotImplementedException();
+            UserModel user = null;
+
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM [User] WHERE username = @username";
+                command.Parameters.AddWithValue("@username", username);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        user = new UserModel
+                        {
+                            Id = reader["Id"].ToString(),
+                            Username = reader["Username"].ToString(),
+                            Password = reader["Password"].ToString(),
+                            Name = reader["Name"].ToString(),
+                            Lastname = reader["Lastname"].ToString(),
+                            Email = reader["Email"].ToString(),
+                            Edad = reader["Edad"].ToString(),
+                            Peso = reader["Peso"].ToString(),
+                            Altura = reader["Altura"].ToString(),
+                            IMC = reader["IMC"].ToString()
+                        };
+                    }
+                }
+            }
+
+            return user;
         }
 
     }

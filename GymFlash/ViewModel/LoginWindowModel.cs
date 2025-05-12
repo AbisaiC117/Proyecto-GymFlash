@@ -3,6 +3,7 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
+using GymFlash.Model;
 using GymFlash.Repositories;
 using GymFlash.View;
 
@@ -39,8 +40,10 @@ namespace GymFlash.ViewModel
 
             if (_userRepository.AuthenticateUser(credential))
             {
-                var ventana = new HomeWindow();
-                ventana.Show();
+                UserModel usuario = _userRepository.GetByUsername(Usuario);
+
+                HomeWindow home = new HomeWindow(usuario);
+                home.Show();
 
                 foreach (var win in System.Windows.Application.Current.Windows)
                 {

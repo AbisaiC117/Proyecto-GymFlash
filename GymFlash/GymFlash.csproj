@@ -59,6 +59,9 @@
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="ViewModel\LoginWindowModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\ViewModelCommand.cs" />
     <Compile Include="View\CompartirPerfil.xaml.cs">
       <DependentUpon>CompartirPerfil.xaml</DependentUpon>
     </Compile>
@@ -103,7 +106,6 @@
     </Compile>
     <Compile Include="Model\Entrenador.cs" />
     <Compile Include="Model\Resenia.cs" />
-    <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="View\HomeWindow.xaml.cs">
