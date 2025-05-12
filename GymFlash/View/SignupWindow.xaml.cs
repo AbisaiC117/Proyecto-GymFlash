@@ -23,5 +23,32 @@ namespace GymFlash.View
         {
             InitializeComponent();
         }
+
+        private void Registrarse_Click(object sender, RoutedEventArgs e)
+        {
+            string nombre = NombreTextBox.Text;
+            string email = EmailTextBox.Text;
+            string password = PasswordBox.Password;
+            string confirmarPassword = ConfirmarPasswordBox.Password;
+
+            if (string.IsNullOrWhiteSpace(nombre) ||
+                string.IsNullOrWhiteSpace(email) ||
+                string.IsNullOrWhiteSpace(password) ||
+                string.IsNullOrWhiteSpace(confirmarPassword))
+            {
+                MessageBox.Show("Por favor, completa todos los campos.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (password != confirmarPassword)
+            {
+                MessageBox.Show("Las contraseñas no coinciden.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            // Aquí podrías agregar lógica para guardar el usuario en la base de datos
+            MessageBox.Show("Cuenta creada exitosamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+            this.Close(); // o redirigir a otra ventana
+        }
     }
 }

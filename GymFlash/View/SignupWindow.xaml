@@ -6,7 +6,39 @@
         xmlns:local="clr-namespace:GymFlash.View"
         mc:Ignorable="d"
         Title="SignupWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+
+
+    <DockPanel LastChildFill="True">
+        <!-- Barra superior roja -->
+        <Border Background="DarkRed" Height="40" DockPanel.Dock="Top">
+            <TextBlock Text="Inicio" Foreground="White" FontSize="20"
+                       VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"
+                       FontWeight="Bold"/>
+        </Border>
+
+        <!-- Contenido principal -->
+        <Grid>
+            <Border Background="#eaeaea" BorderBrush="Black" BorderThickness="1" Margin="40" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="Crear cuenta" FontSize="24" FontWeight="Bold" 
+                               HorizontalAlignment="Center" Margin="0 0 0 20"/>
+
+                    <TextBlock Text="Nombre"/>
+                    <TextBox x:Name="NombreTextBox" Margin="0 5 0 15"/>
+
+                    <TextBlock Text="Email"/>
+                    <TextBox x:Name="EmailTextBox" Margin="0 5 0 15"/>
+
+                    <TextBlock Text="Contraseña"/>
+                    <PasswordBox x:Name="PasswordBox" Margin="0 5 0 15"/>
+
+                    <TextBlock Text="Confirmar contraseña"/>
+                    <PasswordBox x:Name="ConfirmarPasswordBox" Margin="0 5 0 20"/>
+
+                    <Button Content="Registrarse" Height="35" Click="Registrarse_Click"
+                            Background="#D3D3D3" BorderBrush="Gray" BorderThickness="1"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </DockPanel>
 </Window>

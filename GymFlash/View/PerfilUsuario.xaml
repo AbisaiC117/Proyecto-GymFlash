@@ -48,11 +48,11 @@
                 </StackPanel.Resources>
 
                 <!-- Botones del menú -->
-                <Button Content="Inicio" Style="{StaticResource NormalButtonStyle}" />
-                <Button Content="Membresías" Style="{StaticResource NormalButtonStyle}"/>
-                <Button Content="Rutinas" Style="{StaticResource NormalButtonStyle}"/>
-                <Button Content="Perfil" Style="{StaticResource MenuButtonStyle}" FontSize="20" Click="Button_Click"/>
-                <Button Content="Tienda" Style="{StaticResource NormalButtonStyle}"/>
+                <Button Content="Inicio" Click="Inicio_Click" Style="{StaticResource NormalButtonStyle}" />
+                <Button Content="Membresías" Click="Membresias_Click" Style="{StaticResource NormalButtonStyle}"/>
+                <Button Content="Rutinas" Click="Rutinas_Click" Style="{StaticResource NormalButtonStyle}"/>
+                <Button Content="Perfil" Click="Perfil_Click" Style="{StaticResource MenuButtonStyle}"/>
+                <Button Content="Tienda" Click="Tienda_Click" Style="{StaticResource NormalButtonStyle}"/>
             </StackPanel>
         </StackPanel>
 
