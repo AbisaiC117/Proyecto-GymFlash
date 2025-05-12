@@ -38,7 +38,7 @@
 
                 <TextBlock Text="¿Olvidaste tu contraseña?" FontSize="10" Foreground="Gray" HorizontalAlignment="Right" Margin="0,0,0,15"/>
 
-                <Button Content="Entrar" Height="40" Background="#C0C0C0"/>
+                <Button Content="Entrar" Height="40" Background="#C0C0C0" Click="Iniciar_Sesion"/>
             </StackPanel>
         </Border>
     </Grid>

@@ -1,23 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GymFlash.Model;
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace GymFlash.View
 {
     public partial class EditarPerfil : Window
     {
-        private Usuario usuario;
-        public EditarPerfil()
+        private UserModel usuario;
+
+        public EditarPerfil(UserModel usuario)
         {
             InitializeComponent();
             this.usuario = usuario;
@@ -27,7 +18,7 @@ namespace GymFlash.View
         private void Guardar_Click(object sender, RoutedEventArgs e)
         {
             // Aquí podrías guardar la información, por ahora solo mostramos un mensaje.
-            MessageBox.Show("Perfil actualizado correctamente.", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Perfil actualizado correctamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
         }
 
@@ -37,4 +28,3 @@ namespace GymFlash.View
         }
     }
 }
-

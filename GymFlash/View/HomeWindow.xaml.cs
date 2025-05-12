@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GymFlash.Model;
 using GymFlash.View;
 
 namespace GymFlash.View
@@ -21,9 +22,11 @@ namespace GymFlash.View
     /// </summary>
     public partial class HomeWindow : Window
     {
-        public HomeWindow()
+        private UserModel usuario;
+        public HomeWindow(UserModel usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
         }
 
         private void Membresia_Button(object sender, RoutedEventArgs e)
@@ -42,8 +45,8 @@ namespace GymFlash.View
 
         private void Perfil_Button(object sender, RoutedEventArgs e)
         {
-            PerfilUsuario PerfilUsuario = new PerfilUsuario();
-            PerfilUsuario.Show();
+            PerfilUsuario ventanaPerfil = new PerfilUsuario(usuario);
+            ventanaPerfil.Show();
             this.Close();
         }
 

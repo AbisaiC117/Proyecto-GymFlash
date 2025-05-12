@@ -1,43 +1,34 @@
-﻿using System.Windows;
+﻿using GymFlash.Model;
+using System.Windows;
 
 namespace GymFlash.View
 {
     public partial class PerfilUsuario : Window
     {
-        private Usuario usuario;
-        public PerfilUsuario()
-        {   
-            
+        private UserModel usuario;
+
+        public PerfilUsuario(UserModel usuario)
+        {
             InitializeComponent();
-            usuario = new Usuario
-            {
-                Nombre = "Abisai",
-                Paterno = "Cordova",
-                Materno = "Devora",
-                Edad = 19,
-                Peso = 98.7,
-                Altura = 1.75,
-                IMC = "38%"
-            };
+            this.usuario = usuario;
             DataContext = usuario;
-
-
         }
 
         private void EditarPerfil_Click(object sender, RoutedEventArgs e)
         {
-            EditarPerfil ventanaEditar = new EditarPerfil();
+            EditarPerfil ventanaEditar = new EditarPerfil(usuario);
             ventanaEditar.ShowDialog();
         }
+
         private void CompartirPerfil_Click(object sender, RoutedEventArgs e)
         {
             CompartirPerfil ventanaCompartir = new CompartirPerfil();
             ventanaCompartir.ShowDialog();
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            // Aquí podrías implementar un botón adicional
         }
-
     }
 }
