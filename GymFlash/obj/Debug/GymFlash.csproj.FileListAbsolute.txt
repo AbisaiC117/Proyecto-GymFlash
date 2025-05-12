@@ -43,6 +43,7 @@ C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\View
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\View\MainWindow.g.cs
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\View\Membresia.g.cs
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\View\PerfilUsuario.g.cs
+C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\View\RutinasWindow.g.cs
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\View\SignupWindow.g.cs
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\App.g.cs
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -51,6 +52,7 @@ C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\GymF
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\View\HomeWindow.baml
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\View\LoginWindow.baml
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\View\Membresia.baml
+C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\View\RutinasWindow.baml
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\View\SignupWindow.baml
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\GymFlash.g.resources
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\GymFlash.Properties.Resources.resources
@@ -58,5 +60,3 @@ C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\GymF
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\GymFlash.csproj.CoreCompileInputs.cache
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\GymFlash.exe
 C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\GymFlash.pdb
-C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\View\RutinasWindow.g.cs
-C:\Users\Emi\Desktop\Proyecto-GymFlash\Proyecto-GymFlash\GymFlash\obj\Debug\View\RutinasWindow.baml

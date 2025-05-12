@@ -1,4 +1,5 @@
-﻿using GymFlash.ViewModel;
+﻿using GymFlash.View;
+using GymFlash.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,19 @@ namespace GymFlash
             {
                 MessageBox.Show("Usuario o contraseña incorrectos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void Volver_Button(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+        private void Signup_Button(object sender, RoutedEventArgs e)
+        {
+            SignupWindow signupWindow = new SignupWindow();
+            signupWindow.Show();
+            this.Close();
         }
     }
 }

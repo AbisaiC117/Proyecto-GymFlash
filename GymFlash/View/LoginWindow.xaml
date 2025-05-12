@@ -5,21 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GymFlash"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="600" Width="800" Background="White"
-        WindowStartupLocation="CenterScreen">
+        Title="LoginWindow" 
+        Height="600" Width="800" 
+        MinHeight="600" MinWidth="800"
+        Background="White"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized">
     <Grid>
         <!-- Barra superior -->
-        <DockPanel Background="#800000" Height="50" VerticalAlignment="Top">
-            <TextBlock Text="Inicio" Foreground="White" FontWeight="Bold" FontSize="20"
-                       VerticalAlignment="Center" Margin="20,0,0,0"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="100,0,0,0">
-                <TextBlock Text="Membresías" Foreground="White" Margin="20,0"/>
-                <TextBlock Text="Rutinas" Foreground="White" Margin="20,0"/>
-                <TextBlock Text="Perfil" Foreground="White" Margin="20,0"/>
+
+        <DockPanel Background="#8B0000" Height="60" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,0">
+                <Button Content="Volver" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Click="Volver_Button"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0">
                 <Button Content="LOG IN" Background="Transparent" Foreground="White" BorderBrush="White" Width="80" Margin="5,0"/>
-                <Button Content="SIGN UP" Background="Transparent" Foreground="White" BorderBrush="White" Width="80" Margin="5,0"/>
+                <Button Content="SIGN UP" Background="Transparent" Foreground="White" BorderBrush="White" Width="80" Margin="5,0" Click="Signup_Button"/>
             </StackPanel>
         </DockPanel>
 
