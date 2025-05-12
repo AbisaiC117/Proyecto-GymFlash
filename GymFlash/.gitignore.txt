@@ -1,0 +1,40 @@
+# Directorios de compilación y generados por el IDE
+bin/
+obj/
+.vs/
+
+# Archivos de usuario
+*.user
+*.suo
+*.userprefs
+
+# Resultados de pruebas
+TestResults/
+
+# Archivos de NuGet
+packages/
+*.nupkg
+.nuget/
+NuGet.exe
+
+# Archivos de ReSharper
+*.ReSharper
+*.sln.iml
+
+# Archivos de VS Code
+.vscode/
+
+# Archivos de MSBuild
+*.log
+*.msi
+*.pidb
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Otros
+_ReSharper.*
+*.dotCover
+*.orig
+*.cache
