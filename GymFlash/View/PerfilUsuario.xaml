@@ -6,52 +6,80 @@
         mc:Ignorable="d"
         Title="Perfil de Usuario" Height="717" Width="640"
         WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
         Background="White">
 
     <Grid>
-        <!-- Menú superior -->
-        <DockPanel Background="#7A1B1B" Height="40" VerticalAlignment="Top">
-            <TextBlock Text="Huevos" FontWeight="Bold" Foreground="White" Margin="10,0" VerticalAlignment="Center" />
-            <TextBlock Text="leche" Margin="80,0,0,0" Foreground="#CCAAAA" VerticalAlignment="Center" />
-            <TextBlock Text="Rutinas" Margin="170,0,0,0" Foreground="#CCAAAA" VerticalAlignment="Center" />
-            <TextBlock Text="Perfil" Margin="250,0,0,0" Foreground="White" VerticalAlignment="Center" TextDecorations="Underline"/>
-        </DockPanel>
+        <!-- Encabezado -->
+        <StackPanel Background="#8B0000" Height="50" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,10">
+                <!-- Estilos -->
+                <StackPanel.Resources>
+                    <Style x:Key="MenuButtonStyle" TargetType="Button">
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Margin" Value="20,0,0,0"/>
+                        <Setter Property="Padding" Value="0,0,0,5"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderThickness" Value="0,0,0,2"/>
+                                <Setter Property="BorderBrush" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    <Style x:Key="NormalButtonStyle" TargetType="Button">
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="FontWeight" Value="Normal"/>
+                        <Setter Property="Margin" Value="20,0,0,0"/>
+                        <Setter Property="Padding" Value="0,0,0,5"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderThickness" Value="0,0,0,2"/>
+                                <Setter Property="BorderBrush" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+
+                <!-- Botones del menú -->
+                <Button Content="Inicio" Style="{StaticResource NormalButtonStyle}" />
+                <Button Content="Membresías" Style="{StaticResource NormalButtonStyle}"/>
+                <Button Content="Rutinas" Style="{StaticResource NormalButtonStyle}"/>
+                <Button Content="Perfil" Style="{StaticResource MenuButtonStyle}" FontSize="20" Click="Button_Click"/>
+                <Button Content="Tienda" Style="{StaticResource NormalButtonStyle}"/>
+            </StackPanel>
+        </StackPanel>
 
         <!-- Contenido principal -->
-        <StackPanel Margin="0,40,-18,28">
-
+        <StackPanel Margin="0,60,0,40">
             <!-- Título -->
             <TextBlock Text="Perfil de usuario" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10"/>
             <TextBlock Text="GYM" HorizontalAlignment="Center" FontSize="12" Margin="0,0,0,10"/>
 
             <!-- Imagen del gimnasio -->
-            <Grid Height="160">
-                <Image Source="Images/PerfilDeUsuario/gym_background.png" Stretch="Fill"/>
-                <TextBlock Text="FOTOGRAFIA TOMADA EN GYM FLASH" Foreground="White"
-                           FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10"/>
-                <TextBlock Text="Team" Foreground="White" FontWeight="Bold" FontSize="14"
-                           HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10"/>
-                <Border Background="#D9D9D9" CornerRadius="5" Padding="5" HorizontalAlignment="Left" Margin="55,0,0,10"
-                        VerticalAlignment="Bottom">
-                    <TextBlock Text="GYM Flash" FontWeight="Bold" FontSize="14"/>
-                </Border>
+            <Grid Height="133" Width="462">
+                <Image Source="Images/PerfilDeUsuario/gym_background.png" Stretch="Fill" Margin="65,0,43,0"/>
+                <Border Background="#D9D9D9" CornerRadius="5" Padding="5" HorizontalAlignment="Left" Margin="55,0,0,10" VerticalAlignment="Bottom"/>
             </Grid>
 
             <!-- Foto de perfil y correo -->
             <StackPanel Orientation="Horizontal" Margin="10" VerticalAlignment="Center">
                 <Image Source="Images/PerfilDeUsuario/user_photo.png" Width="80" Height="80" Margin="10"/>
                 <StackPanel Margin="10,25,0,0">
-                    <TextBlock Text="abisaicordovadevora9186@gmail.com" FontWeight="Bold" FontSize="14"/>
+                    <TextBlock Text="{Binding Correo}" FontWeight="Bold" FontSize="14"/>
                 </StackPanel>
             </StackPanel>
 
             <!-- Botones -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
                 <Button Content="Editar perfil" Margin="5" Padding="10,5" Click="EditarPerfil_Click"/>
-
                 <Button Content="Compartir perfil" Margin="5" Padding="10,5" Click="CompartirPerfil_Click"/>
-
-                <Button Content="+" Width="30" Height="30" Margin="10,0"/>
             </StackPanel>
 
             <!-- Datos -->
@@ -63,57 +91,51 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
-                <!-- Nombre -->
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Nombre" Margin="44,5,275,5" Grid.ColumnSpan="2"/>
-                <TextBox Grid.Row="0" Text="Abisai" Margin="99,5,220,5" Grid.ColumnSpan="2"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Nombre" Margin="5"/>
+                <TextBox Grid.Row="0" Text="{Binding Nombre, UpdateSourceTrigger=PropertyChanged}" Margin="76,2,234,8" Grid.ColumnSpan="2"/>
 
-                <!-- Apellido paterno -->
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="Paterno" Margin="44,5,275,5" Grid.ColumnSpan="2"/>
-                <TextBox Grid.Row="1" Text="Cordova" Margin="99,4,220,5" Grid.ColumnSpan="2"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Paterno" Margin="5"/>
+                <TextBox Grid.Row="1" Text="{Binding Paterno, UpdateSourceTrigger=PropertyChanged}" Margin="76,2,234,7" Grid.ColumnSpan="2"/>
 
-                <!-- Apellido materno -->
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Materno" Margin="44,6,275,4" Grid.ColumnSpan="2"/>
-                <TextBox Grid.Row="2" Text="Devora" Margin="99,6,220,4" Grid.ColumnSpan="2"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Materno" Margin="5"/>
+                <TextBox Grid.Row="2" Text="{Binding Materno, UpdateSourceTrigger=PropertyChanged}" Margin="76,6,234,4" Grid.ColumnSpan="2"/>
 
-                <!-- Edad, peso, altura, IMC -->
-                <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
+                <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
                     <StackPanel Margin="5">
-                        <TextBlock Text="Edad" RenderTransformOrigin="-1.267,0.72"/>
-                        <TextBox Width="50" Text="19" RenderTransformOrigin="9.587,-1.735"/>
+                        <TextBlock Text="Edad"/>
+                        <TextBox Width="50" Text="{Binding Edad, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                     <StackPanel Margin="5">
                         <TextBlock Text="Peso"/>
-                        <TextBox Width="60" Text="98.7"/>
+                        <TextBox Width="60" Text="{Binding Peso, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                     <StackPanel Margin="5">
                         <TextBlock Text="Altura"/>
-                        <TextBox Width="60" Text="1.75"/>
+                        <TextBox Width="60" Text="{Binding Altura, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                     <StackPanel Margin="5">
                         <TextBlock Text="IMC"/>
-                        <TextBox Width="60" Text="38%"/>
+                        <TextBox Width="60" Text="{Binding IMC, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>
 
             <!-- Membresía y vigencia -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
-                <TextBlock Text="Membresía:" FontWeight="Bold" />
-                <TextBlock Text=" PREMIUM" Margin="5,0" />
+                <TextBlock Text="Membresía:" FontWeight="Bold"/>
+                <TextBlock Text="{Binding Membresia}" Margin="5,0"/>
                 <TextBlock Text="Vigencia:" FontWeight="Bold" Margin="10,0"/>
-                <TextBlock Text="12/05/2025" Margin="5,0"/>
+                <TextBlock Text="{Binding Vigencia}" Margin="5,0"/>
             </StackPanel>
         </StackPanel>
 
-        <!-- Pie de página -->
-        <DockPanel Background="#7A1B1B" Height="30" VerticalAlignment="Bottom">
-            <TextBlock Text="Contacto" Foreground="White" Margin="10,0" VerticalAlignment="Center"/>
-            <TextBlock Text="Condiciones de uso" Foreground="White" Margin="90,0,0,0" VerticalAlignment="Center"/>
-            <TextBlock Text="Ayuda" Foreground="White" Margin="220,0,0,0" VerticalAlignment="Center"/>
+        <!-- Pie de pagina -->
+        <DockPanel Background="#8B0000" Height="40" VerticalAlignment="Bottom" Grid.ColumnSpan="3">
+            <TextBlock Text="Contacto - Condiciones de Uso - Ayuda" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </DockPanel>
     </Grid>
 </Window>

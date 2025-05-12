@@ -16,15 +16,18 @@ namespace GymFlash.View
 {
     public partial class EditarPerfil : Window
     {
+        private Usuario usuario;
         public EditarPerfil()
         {
             InitializeComponent();
+            this.usuario = usuario;
+            DataContext = usuario;
         }
 
         private void Guardar_Click(object sender, RoutedEventArgs e)
         {
             // Aquí podrías guardar la información, por ahora solo mostramos un mensaje.
-            MessageBox.Show("Perfil actualizado correctamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Perfil actualizado correctamente.", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
         }
 
