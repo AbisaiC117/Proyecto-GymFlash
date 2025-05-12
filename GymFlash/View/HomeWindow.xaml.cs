@@ -31,14 +31,14 @@ namespace GymFlash.View
 
         private void Membresia_Button(object sender, RoutedEventArgs e)
         {
-            Membresia Membresia = new Membresia();
+            Membresia Membresia = new Membresia(usuario);
             Membresia.Show();
             this.Close();
         }
 
         private void Rutinas_Button(object sender, RoutedEventArgs e)
         {
-            RutinasWindow RutinasWindow = new RutinasWindow();
+            RutinasWindow RutinasWindow = new RutinasWindow(usuario);
             RutinasWindow.Show();
             this.Close();
         }

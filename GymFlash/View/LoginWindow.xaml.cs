@@ -43,9 +43,10 @@ namespace GymFlash
             if (DataContext is LoginWindowModel vm)
             {
                 var credenciales = new NetworkCredential(vm.Usuario, vm.Contrasena);
-                IUserRepository userRepository = new UserRepository();
+                UserRepository userRepository = new UserRepository();
 
                 bool usuarioValido = userRepository.AuthenticateUser(credenciales);
+                MessageBox.Show($"Usuario: {vm.Usuario}\nContraseña: {vm.Contrasena}");
 
                 if (usuarioValido)
                 {

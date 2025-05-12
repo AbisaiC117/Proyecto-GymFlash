@@ -18,20 +18,20 @@ namespace GymFlash.Repositories
 
         public bool AuthenticateUser(NetworkCredential credential)
         {
-            bool validUser;
             using (var connection = GetConnection())
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "select * from [User] where username = @username and [password] = @password";
-                command.Parameters.Add("@username", System.Data.SqlDbType.NVarChar).Value = credential.UserName;
-                command.Parameters.Add("@password", System.Data.SqlDbType.NVarChar).Value = credential.Password;
-                validUser = command.ExecuteScalar() == null ? false : true; //¿Fue un usuario valido? regresa boolean verdadero o falso
-            }
-            return validUser;
+                command.CommandText = "SELECT COUNT(1) FROM [User] WHERE Username = @username AND Password = @password";
+                command.Parameters.AddWithValue("@username", credential.UserName);
+                command.Parameters.AddWithValue("@password", credential.Password);
 
+                int count = (int)command.ExecuteScalar();
+                return count > 0;
+            }
         }
+
 
         public void Edit(UserModel userModel)
         {

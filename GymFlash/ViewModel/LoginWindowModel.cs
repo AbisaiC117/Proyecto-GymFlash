@@ -1,66 +1,37 @@
 ﻿using System.ComponentModel;
-using System.Net;
-using System.Runtime.CompilerServices;
-using System.Windows;
-using System.Windows.Input;
-using GymFlash.Model;
-using GymFlash.Repositories;
-using GymFlash.View;
 
 namespace GymFlash.ViewModel
 {
-    public class LoginWindowModel:ViewModelBase
+    public class LoginWindowModel : INotifyPropertyChanged
     {
-        private string _usuario;
-        private string _contrasena;
-        private readonly UserRepository _userRepository;
+        private string usuario;
+        private string contrasena;
 
         public string Usuario
         {
-            get => _usuario;
-            set { _usuario = value; OnPropertyChanged(); }
+            get => usuario;
+            set
+            {
+                usuario = value;
+                OnPropertyChanged(nameof(Usuario));
+            }
         }
 
         public string Contrasena
         {
-            get => _contrasena;
-            set { _contrasena = value; OnPropertyChanged(); }
-        }
-
-        public ICommand EntrarCommand { get; }
-
-        public LoginWindowModel()
-        {
-            EntrarCommand = new RelayCommand(Entrar);
-        }
-
-        private void Entrar(object parametro)
-        {
-            var credential = new NetworkCredential(Usuario, Contrasena);
-
-            if (_userRepository.AuthenticateUser(credential))
+            get => contrasena;
+            set
             {
-                UserModel usuario = _userRepository.GetByUsername(Usuario);
-
-                HomeWindow home = new HomeWindow(usuario);
-                home.Show();
-
-                foreach (var win in System.Windows.Application.Current.Windows)
-                {
-                    if (win is MainWindow)
-                        ((MainWindow)win).Close();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Credenciales incorrectas");
+                contrasena = value;
+                OnPropertyChanged(nameof(Contrasena));
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string nombre = null)
+
+        protected void OnPropertyChanged(string propertyName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nombre));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

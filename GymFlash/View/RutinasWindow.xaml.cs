@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GymFlash.Model;
 
 namespace GymFlash.View
 {
@@ -19,7 +20,7 @@ namespace GymFlash.View
     /// </summary>
     public partial class RutinasWindow : Window
     {
-        public RutinasWindow()
+        public RutinasWindow(UserModel usuario)
         {
             InitializeComponent();
         }
