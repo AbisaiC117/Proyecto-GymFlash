@@ -1,7 +1,7 @@
 ﻿<Window x:Class="GymFlash.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Inicio" Height="300" Width="350" WindowStartupLocation="CenterScreen"
+        Title="Inicio" Height="450" Width="800" WindowStartupLocation="CenterScreen"
         Background="#f0f0f0" ResizeMode="NoResize"
         WindowState="Maximized">
 
