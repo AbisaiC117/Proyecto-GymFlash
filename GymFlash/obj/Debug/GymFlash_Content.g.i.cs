@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/images/compartirperfil/gmail.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("view/images/inicio/maps.png")]
 
 

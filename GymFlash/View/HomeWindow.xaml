@@ -17,17 +17,17 @@
             <!-- Barra superior -->
             <DockPanel Background="#8B0000" Height="60" VerticalAlignment="Top">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,0">
-                    <Button Content="Inicio" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Click="Membresia_Button" />
-                    <Button Content="Membresías" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Margin="20,0,0,0"/>
-                    <Button Content="Rutinas" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Margin="20,0,0,0"/>
-                    <Button Content="Mi ID" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Margin="20,0,0,0"/>
+                    <Button Content="Inicio" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold"/>
+                    <Button Content="Membresías" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Margin="20,0,0,0" Click="Membresia_Button"/>
+                    <Button Content="Rutinas" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Margin="20,0,0,0" Click="Rutinas_Button"/>
+                    <Button Content="Perfil" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Margin="20,0,0,0" Click="Perfil_Button"/>
                 </StackPanel>
             </DockPanel>
 
             <!-- Imagen principal responsive -->
             <Grid>
                 <!-- Imagen de fondo -->
-                <Image Source="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b"
+                <Image Source="/View/Images/Inicio/senoraGym.jpeg"
            Stretch="UniformToFill"
            Height="{Binding ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Converter={StaticResource WidthToHeightConverter}}" />
 
@@ -44,7 +44,7 @@
             <UniformGrid Columns="3" Margin="10">
                 <Border BorderThickness="1" BorderBrush="Gray" Padding="10" CornerRadius="8" Margin="10">
                     <StackPanel>
-                        <Image Source="https://images.unsplash.com/photo-1599058917212-d750089bc65b" Height="150" Stretch="UniformToFill" Margin="0,0,0,10"/>
+                        <Image Source="/View/Images/Inicio/coach1.jpg" Height="400" Stretch="UniformToFill" Margin="0,0,0,10"/>
                         <TextBlock Text="Anastase Margos" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center"/>
                         <TextBlock Text="Trainer Ms. Olympia" FontStyle="Italic" FontSize="14" HorizontalAlignment="Center"/>
                     </StackPanel>
@@ -52,7 +52,7 @@
 
                 <Border BorderThickness="1" BorderBrush="Gray" Padding="10" CornerRadius="8" Margin="10">
                     <StackPanel>
-                        <Image Source="https://images.unsplash.com/photo-1594737625785-c8aa03f7f5a0" Height="150" Stretch="UniformToFill" Margin="0,0,0,10"/>
+                        <Image Source="/View/Images/Inicio/coach2.jpg" Height="400" Stretch="UniformToFill" Margin="0,0,0,10"/>
                         <TextBlock Text="Karla Souza" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center"/>
                         <TextBlock Text="Personal Trainer desde 2014" FontStyle="Italic" FontSize="14" HorizontalAlignment="Center"/>
                     </StackPanel>
@@ -60,7 +60,7 @@
 
                 <Border BorderThickness="1" BorderBrush="Gray" Padding="10" CornerRadius="8" Margin="10">
                     <StackPanel>
-                        <Image Source="https://images.unsplash.com/photo-1598188305693-f58c80c0d539" Height="150" Stretch="UniformToFill" Margin="0,0,0,10"/>
+                        <Image Source="/View/Images/Inicio/coach3.jpeg" Height="400" Stretch="UniformToFill" Margin="0,0,0,10"/>
                         <TextBlock Text="Hayley Kim" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center"/>
                         <TextBlock Text="Especialista en calistenia" FontStyle="Italic" FontSize="14" HorizontalAlignment="Center"/>
                     </StackPanel>
@@ -68,9 +68,9 @@
             </UniformGrid>
 
             <!-- Mapa -->
-            <TextBlock Text="UBICACIÓN" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20"/>
-            <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Map_example.png/640px-Map_example.png"
-                   Height="300" Margin="20" Stretch="UniformToFill"/>
+            <Button Click="OpenGymLocation_Click" Margin="20">
+                <Image Source="/View/Images/Inicio/maps.png" Height="600" Stretch="UniformToFill"/>
+            </Button>
 
             <!-- Reseñas -->
             <TextBlock Text="Reseñas" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20"/>

@@ -26,12 +26,14 @@ namespace GymFlash
         {
             LoginWindow loginWindow = new LoginWindow();
             loginWindow.Show();
+            this.Close(); // Cierra la ventana actual si es necesario
         }
 
         private void Signup_Click(object sender, RoutedEventArgs e)
         {
             SignupWindow signupWindow = new SignupWindow();
             signupWindow.Show();
+            this.Close(); // Cierra la ventana actual si es necesario
         }
     }
 }

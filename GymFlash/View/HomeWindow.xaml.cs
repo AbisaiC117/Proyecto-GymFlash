@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,31 @@ namespace GymFlash.View
         {
             Membresia Membresia = new Membresia();
             Membresia.Show();
+            this.Close();
+        }
+
+        private void Rutinas_Button(object sender, RoutedEventArgs e)
+        {
+            RutinasWindow RutinasWindow = new RutinasWindow();
+            RutinasWindow.Show();
+            this.Close();
+        }
+
+        private void Perfil_Button(object sender, RoutedEventArgs e)
+        {
+            PerfilUsuario PerfilUsuario = new PerfilUsuario();
+            PerfilUsuario.Show();
+            this.Close();
+        }
+
+        private void OpenGymLocation_Click(object sender, RoutedEventArgs e)
+        {
+            string gymUrl = "https://www.google.com/maps/place/GYM+Cardiofitness+Club/@22.758851,-102.573542,16z";
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = gymUrl,
+                UseShellExecute = true
+            });
         }
     }
 }

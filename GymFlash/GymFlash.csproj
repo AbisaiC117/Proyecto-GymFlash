@@ -70,6 +70,9 @@
     <Compile Include="View\PerfilUsuario.xaml.cs">
       <DependentUpon>PerfilUsuario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\RutinasWindow.xaml.cs">
+      <DependentUpon>RutinasWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SignupWindow.xaml.cs">
       <DependentUpon>SignupWindow.xaml</DependentUpon>
     </Compile>
@@ -115,6 +118,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PerfilUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RutinasWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -170,6 +177,19 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\Images\CompartirPerfil\gmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\Inicio\coach1.jpg" />
+    <Resource Include="View\Images\Inicio\coach2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\Inicio\senoraGym.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\Inicio\coach3.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\Inicio\maps.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
