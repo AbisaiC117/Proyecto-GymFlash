@@ -8,10 +8,6 @@
         Title="Membresías" Height="1050" Width="1100"
         Background="White"
         WindowState="Maximized">
-    <Window.Resources>
-        <local:WidthToHeightConverter x:Key="WidthToHeightConverter"/>
-    </Window.Resources>
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -57,10 +53,10 @@
                 </StackPanel.Resources>
 
                 <Button Content="Inicio" Style="{StaticResource MenuButtonStyle}" FontSize="20" Click="Button_Inicio"/>
-                <Button Content="Membresías" Style="{StaticResource NormalButtonStyle}"/>
-                <Button Content="Rutinas" Style="{StaticResource NormalButtonStyle}"/>
-                <Button Content="Perfil" Style="{StaticResource NormalButtonStyle}"/>
-                <Button Content="Tienda" Style="{StaticResource NormalButtonStyle}"/>
+                <Button Content="Membresías" Style="{StaticResource NormalButtonStyle}" Click="Button_Membresia"/>
+                <Button Content="Rutinas" Style="{StaticResource NormalButtonStyle}" Click="Button_Rutinas"/>
+                <Button Content="Perfil" Style="{StaticResource NormalButtonStyle}" Click="Button_Perfil"/>
+                <Button Content="Tienda" Style="{StaticResource NormalButtonStyle}" Click="Button_Tienda"/>
             </StackPanel>
         </StackPanel>
 
