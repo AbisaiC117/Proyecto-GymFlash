@@ -44,22 +44,12 @@ namespace GymFlash.View
             this.Close();
         }
 
-        private void Tienda_Click(object sender, RoutedEventArgs e)
-        {
-            // Implementar lógica para la tienda
-        }7
         private void Perfil_Click(object sender, RoutedEventArgs e)
         {
-            // Lógica cuando se hace clic en el botón Perfil
-            // Puedes dejarlo vacío si no necesita hacer nada
-            // o implementar la navegación que necesites
         }
         private void CompartirPerfil_Click(object sender, RoutedEventArgs e)
         {
-            // Lógica para compartir el perfil
-            // Por ejemplo:
-            MessageBox.Show("Función de compartir perfil en desarrollo", "Información",
-                          MessageBoxButton.OK, MessageBoxImage.Information);
-        }
+            CompartirPerfil compartirPerfil = new CompartirPerfil();
+            compartirPerfil.ShowDialog();        }
     }
 }

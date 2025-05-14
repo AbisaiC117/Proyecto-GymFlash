@@ -22,9 +22,9 @@ namespace GymFlash.View
             try
             {
                 // Calcular IMC automáticamente al guardar
-                if (_usuario.Altura > 0)
+                if (float.Parse(_usuario.Altura) > 0)
                 {
-                    _usuario.IMC = (int)(_usuario.Peso / (_usuario.Altura * _usuario.Altura));
+                    _usuario.IMC = ""+(float.Parse(_usuario.Peso) / (float.Parse(_usuario.Altura) * float.Parse(_usuario.Altura)));
                 }
 
                 // Crear repositorio (sin argumentos)

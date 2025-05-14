@@ -46,8 +46,6 @@ namespace GymFlash
                 UserRepository userRepository = new UserRepository();
 
                 bool usuarioValido = userRepository.AuthenticateUser(credenciales);
-                MessageBox.Show($"Usuario: {vm.Usuario}\nContraseña: {vm.Contrasena}");
-
                 if (usuarioValido)
                 {
                     UserModel usuario = userRepository.GetByUsername(vm.Usuario);

@@ -68,6 +68,55 @@ namespace GymFlash.Repositories
             throw new NotImplementedException();
         }
 
+        //agregacion de el metodo para actualiaar las oantallas
+        public bool ActualizarUsuario(UserModel usuario)
+        {
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+
+                command.CommandText = @"UPDATE [User] SET 
+            [Name] = @Name,
+            LastName = @LastName,
+            Email = @Email,
+            Edad = @Edad,
+            Peso = @Peso,
+            Altura = @Altura,
+            IMC = @IMC
+            WHERE ID = @ID";
+
+                // Conversión segura de los datos string a tipos numéricos
+                if (!int.TryParse(usuario.Edad, out int edad))
+                    edad = 0;
+
+                if (!decimal.TryParse(usuario.Peso, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out decimal peso))
+                    peso = 0;
+
+                if (!decimal.TryParse(usuario.Altura, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out decimal altura))
+                    altura = 0;
+
+                if (!decimal.TryParse(usuario.IMC, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out decimal imc))
+                    imc = 0;
+
+                // Asignación de parámetros
+                command.Parameters.AddWithValue("@ID", Guid.Parse(usuario.Id));
+                command.Parameters.AddWithValue("@Name", usuario.Name);
+                command.Parameters.AddWithValue("@LastName", usuario.Lastname);
+                command.Parameters.AddWithValue("@Email", usuario.Email);
+                command.Parameters.AddWithValue("@Edad", edad);
+                command.Parameters.AddWithValue("@Peso", peso);
+                command.Parameters.AddWithValue("@Altura", altura);
+                command.Parameters.AddWithValue("@IMC", imc);
+
+                return command.ExecuteNonQuery() > 0;
+            }
+        }
+
+
+
+
         public void Remove(int id)
         {
             throw new NotImplementedException();

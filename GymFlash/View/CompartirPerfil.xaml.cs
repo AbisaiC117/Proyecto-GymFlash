@@ -18,16 +18,19 @@ namespace GymFlash.View
         private void CompartirWhatsApp_Click(object sender, RoutedEventArgs e)
         {
             Process.Start(new ProcessStartInfo("https://api.whatsapp.com/send?text=¡Hola! Mira mi perfil en GYM Flash.") { UseShellExecute = true });
+            this.Close();
         }
 
         private void CompartirMessenger_Click(object sender, RoutedEventArgs e)
         {
             Process.Start(new ProcessStartInfo("https://www.messenger.com/t") { UseShellExecute = true });
+            this.Close();
         }
 
         private void CompartirGmail_Click(object sender, RoutedEventArgs e)
         {
             Process.Start(new ProcessStartInfo("mailto:?subject=Mi perfil en GYM Flash&body=¡Hola! Mira mi perfil en GYM Flash.") { UseShellExecute = true });
+            this.Close();
         }
     }
 }

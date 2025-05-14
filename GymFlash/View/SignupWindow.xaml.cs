@@ -26,6 +26,17 @@ namespace GymFlash.View
             InitializeComponent();
         }
 
+        private void Signup_Button(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void Volver_Button(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
         private void Registrarse_Click(object sender, RoutedEventArgs e)
         {
             string nombre = NombreTextBox.Text;
@@ -67,8 +78,7 @@ namespace GymFlash.View
             }
             imcVal = pesoVal / (alturaVal * alturaVal);
 
-            try
-            {
+
                 var userModel = new UserModel
                 {
                     Username = username,
@@ -90,11 +100,14 @@ namespace GymFlash.View
 
                 MessageBox.Show("Cuenta creada exitosamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close(); // o abrir LoginWindow
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al registrar usuario: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+
+        }
+
+        private void Login_Button(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
         }
     }
 }

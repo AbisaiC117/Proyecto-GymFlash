@@ -5,14 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GymFlash.View"
         mc:Ignorable="d"
-        Title="SignupWindow" Height="600" Width="800">
+        Title="SignupWindow" Height="600" Width="800"
+        WindowState="Maximized">
 
     <DockPanel LastChildFill="True">
         <!-- Barra superior roja -->
-        <Border Background="DarkRed" Height="40" DockPanel.Dock="Top">
-            <TextBlock Text="Inicio" Foreground="White" FontSize="20"
-                       VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"
-                       FontWeight="Bold"/>
+        <Border Background="DarkRed" Height="52" DockPanel.Dock="Top">
+            <DockPanel Background="#8B0000" Height="60" VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,0">
+                    <Button Content="Volver" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontWeight="Bold" Click="Volver_Button"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0">
+                    <Button Content="LOG IN" Background="Transparent" Foreground="White" BorderBrush="White" Width="80" Margin="5,0" Click="Login_Button"/>
+                    <Button Content="SIGN UP" Background="Transparent" Foreground="White" BorderBrush="White" Width="80" Margin="5,0" Click="Signup_Button"/>
+                </StackPanel>
+            </DockPanel>
         </Border>
 
         <!-- Contenido principal -->

@@ -46,9 +46,8 @@
                 <StackPanel Orientation="Horizontal" Width="361" DockPanel.Dock="Left">
                     <Button Content="Inicio" Click="Inicio_Click" Style="{StaticResource NormalButtonStyle}" />
                     <Button Content="Membresías" Click="Membresias_Click" Style="{StaticResource NormalButtonStyle}" />
-                    <Button Content="Perfil" Click="Perfil_Click" Style="{StaticResource NormalButtonStyle}" />
                     <Button Content="Rutinas" Click="Rutinas_Click" Style="{StaticResource MenuButtonStyle}" />
-                    <Button Content="Tienda" Click="Tienda_Click" Style="{StaticResource NormalButtonStyle}" />
+                    <Button Content="Perfil" Click="Perfil_Click" Style="{StaticResource NormalButtonStyle}" />
                 </StackPanel>
             </DockPanel>
         </Border>
