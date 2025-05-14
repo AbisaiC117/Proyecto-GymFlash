@@ -72,7 +72,7 @@
             <StackPanel Orientation="Horizontal" Margin="10" VerticalAlignment="Center">
                 <Image Source="Images/PerfilDeUsuario/user_photo.png" Width="80" Height="80" Margin="10"/>
                 <StackPanel Margin="10,25,0,0">
-                    <TextBlock Text="{Binding Correo}" FontWeight="Bold" FontSize="14"/>
+                    <TextBlock Text="{Binding Email}" FontWeight="Bold" FontSize="14"/>
                 </StackPanel>
             </StackPanel>
 
@@ -82,7 +82,7 @@
                 <Button Content="Compartir perfil" Margin="5" Padding="10,5" Click="CompartirPerfil_Click"/>
             </StackPanel>
 
-            <!-- Datos -->
+            <!-- Datos del usuario -->
             <Grid Margin="20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -95,31 +95,40 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
+                <!-- Nombre -->
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Nombre" Margin="5"/>
-                <TextBox Grid.Row="0" Text="{Binding Nombre, UpdateSourceTrigger=PropertyChanged}" Margin="76,2,234,8" Grid.ColumnSpan="2"/>
+                <TextBox Grid.Row="0" Text="{Binding Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+         Margin="76,2,234,8" Grid.ColumnSpan="2" IsReadOnly="True"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="Paterno" Margin="5"/>
-                <TextBox Grid.Row="1" Text="{Binding Paterno, UpdateSourceTrigger=PropertyChanged}" Margin="76,2,234,7" Grid.ColumnSpan="2"/>
+                <!-- Apellido -->
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Apellido" Margin="5"/>
+                <TextBox Grid.Row="1" Text="{Binding LastName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+         Margin="76,2,234,7" Grid.ColumnSpan="2" IsReadOnly="True"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Materno" Margin="5"/>
-                <TextBox Grid.Row="2" Text="{Binding Materno, UpdateSourceTrigger=PropertyChanged}" Margin="76,6,234,4" Grid.ColumnSpan="2"/>
-
+                <!-- Sección de datos físicos -->
                 <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                    <!-- Edad -->
                     <StackPanel Margin="5">
                         <TextBlock Text="Edad"/>
-                        <TextBox Width="50" Text="{Binding Edad, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox Width="50" Text="{Binding Edad, Mode=OneWay}" IsReadOnly="True"/>
                     </StackPanel>
+
+                    <!-- Peso -->
                     <StackPanel Margin="5">
-                        <TextBlock Text="Peso"/>
-                        <TextBox Width="60" Text="{Binding Peso, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Text="Peso (kg)"/>
+                        <TextBox Width="60" Text="{Binding Peso, Mode=OneWay}" IsReadOnly="True"/>
                     </StackPanel>
+
+                    <!-- Altura -->
                     <StackPanel Margin="5">
-                        <TextBlock Text="Altura"/>
-                        <TextBox Width="60" Text="{Binding Altura, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Text="Altura (m)"/>
+                        <TextBox Width="60" Text="{Binding Altura, Mode=OneWay}" IsReadOnly="True"/>
                     </StackPanel>
+
+                    <!-- IMC -->
                     <StackPanel Margin="5">
                         <TextBlock Text="IMC"/>
-                        <TextBox Width="60" Text="{Binding IMC, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox Width="60" Text="{Binding IMC, Mode=OneWay}" IsReadOnly="True"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>
@@ -128,8 +137,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
                 <TextBlock Text="Membresía:" FontWeight="Bold"/>
                 <TextBlock Text="{Binding Membresia}" Margin="5,0"/>
-                <TextBlock Text="Vigencia:" FontWeight="Bold" Margin="10,0"/>
-                <TextBlock Text="{Binding Vigencia}" Margin="5,0"/>
+                
             </StackPanel>
         </StackPanel>
 
