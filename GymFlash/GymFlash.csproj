@@ -204,5 +204,11 @@
   <ItemGroup>
     <Resource Include="View\Images\Inicio\maps.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\Rutinas\fullBody.jpg" />
+    <Resource Include="View\Images\Rutinas\image_png.png" />
+    <Resource Include="View\Images\Rutinas\pierna.jpg" />
+    <Resource Include="View\Images\Rutinas\rutina_pecho.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
