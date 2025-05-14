@@ -38,7 +38,6 @@ namespace GymFlash.View
             ventanaPerfil.Show();
             this.Close();
         }
-
         private void Button_Tienda(object sender, RoutedEventArgs e)
         {
             // Puedes agregar ventana de tienda aquí si existe.
