@@ -81,7 +81,8 @@
                             <TextBlock Text="$250.00" FontSize="20" TextAlignment="Center"/>
                             <TextBlock Text="Acceso general limitado al gimnasio." TextWrapping="Wrap" FontSize="18" TextAlignment="Center" />
                             <Button Content="COMPRAR" Margin="11" Width="120" Height="31"
-                                    Foreground="White" FontWeight="Bold" FontSize="14" Cursor="Hand">
+                                    Foreground="White" FontWeight="Bold" FontSize="14" Cursor="Hand"
+                                    Click="Button_MembresiaBasica">
                                 <Button.Style>
                                     <Style TargetType="{x:Type Button}">
                                         <Setter Property="Background" Value="#462AD8"/>
@@ -115,7 +116,8 @@
                             <TextBlock Text="$700.00" FontSize="20" TextAlignment="Center"/>
                             <TextBlock Text="Acceso VIP a todos los equipos y rutinas personalizadas." TextWrapping="Wrap" Margin="5" FontSize="18" TextAlignment="Center"/>
                             <Button Content="COMPRAR" Margin="5" Width="120" Height="31"
-                                    Foreground="White" FontWeight="Bold" FontSize="14" Cursor="Hand">
+                                    Foreground="White" FontWeight="Bold" FontSize="14" Cursor="Hand"
+                                    Click="Button_MembresiaPremium">
                                 <Button.Style>
                                     <Style TargetType="{x:Type Button}">
                                         <Setter Property="Background" Value="#462AD8"/>

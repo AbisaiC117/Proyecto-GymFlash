@@ -1,5 +1,6 @@
 ﻿using GymFlash.Model;
 using System.Windows;
+using GymFlash.Repositories;
 
 namespace GymFlash.View
 {
@@ -42,5 +43,19 @@ namespace GymFlash.View
         {
             // Puedes agregar ventana de tienda aquí si existe.
         }
+
+        private void Button_MembresiaBasica(object sender, RoutedEventArgs e)
+        {
+            MembresiaComprada ventanaBasica = new MembresiaComprada();
+            ventanaBasica.Show();
+            
+        }
+
+        private void Button_MembresiaPremium(object sender, RoutedEventArgs e)
+        {
+            MembresiaComprada ventanaBasica = new MembresiaComprada();
+            ventanaBasica.Show();
+        }
     }
 }
+
