@@ -1,6 +1,7 @@
 ﻿using GymFlash.Model;
 using System.Windows;
 using GymFlash.Repositories;
+using System;
 
 namespace GymFlash.View
 {
@@ -46,26 +47,92 @@ namespace GymFlash.View
 
         private void Button_MembresiaBasica(object sender, RoutedEventArgs e)
         {
-            var userRepository = new UserRepository();
-            userRepository.UpdateMembership(usuario.Id, 2); // 2 = Básica
+            // Mensaje de confirmación
+            MessageBoxResult result = MessageBox.Show(
+                "¿Estás seguro de comprar la Membresía Básica por $250.00?",
+                "Confirmar Compra",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
 
-            // Actualiza el objeto usuario localmente
-            usuario.ID_TipoMembresia = 2;
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    var userRepository = new UserRepository();
 
-            MembresiaComprada ventana = new MembresiaComprada();
-            ventana.Show();
+                    // Verificar si ya tiene una membresía igual o superior
+                    if (usuario.ID_TipoMembresia >= 2)
+                    {
+                        MessageBox.Show("Ya tienes una membresía igual o superior activa.",
+                                      "Advertencia",
+                                      MessageBoxButton.OK,
+                                      MessageBoxImage.Warning);
+                        return;
+                    }
+
+                    // Actualizar en base de datos
+                    userRepository.UpdateMembership(usuario.Id, 2);
+
+                    // Actualizar localmente
+                    usuario.ID_TipoMembresia = 2;
+
+                    // Abrir ventana de compra realizada
+                    MembresiaComprada ventana = new MembresiaComprada();
+                    ventana.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al actualizar membresía: {ex.Message}",
+                                   "Error",
+                                   MessageBoxButton.OK,
+                                   MessageBoxImage.Error);
+                }
+            }
         }
 
         private void Button_MembresiaPremium(object sender, RoutedEventArgs e)
         {
-            var userRepository = new UserRepository();
-            userRepository.UpdateMembership(usuario.Id, 3); // 3 = Premium
+            // Mensaje de confirmación con precio
+            MessageBoxResult result = MessageBox.Show(
+                "¿Estás seguro de comprar la Membresía Premium por $700.00?",
+                "Confirmar Compra",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
 
-            // Actualiza el objeto usuario localmente
-            usuario.ID_TipoMembresia = 3;
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    var userRepository = new UserRepository();
 
-            MembresiaComprada ventana = new MembresiaComprada();
-            ventana.Show();
+                    // Verificar si ya tiene Premium
+                    if (usuario.ID_TipoMembresia == 3)
+                    {
+                        MessageBox.Show("Ya tienes la Membresía Premium activa.",
+                                       "Advertencia",
+                                       MessageBoxButton.OK,
+                                       MessageBoxImage.Information);
+                        return;
+                    }
+
+                    // Actualizar en base de datos
+                    userRepository.UpdateMembership(usuario.Id, 3);
+
+                    // Actualizar localmente
+                    usuario.ID_TipoMembresia = 3;
+
+                    // Abrir ventana de compra realizada
+                    MembresiaComprada ventana = new MembresiaComprada();
+                    ventana.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al actualizar membresía: {ex.Message}",
+                                  "Error",
+                                  MessageBoxButton.OK,
+                                  MessageBoxImage.Error);
+                }
+            }
         }
     }
 }
