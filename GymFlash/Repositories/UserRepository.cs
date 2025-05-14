@@ -29,7 +29,7 @@ namespace GymFlash.Repositories
 
                 int count = (int)command.ExecuteScalar();
                 return count > 0;
-            }
+            }        
         }
 
 
@@ -75,13 +75,28 @@ namespace GymFlash.Repositories
                             Edad = reader["Edad"].ToString(),
                             Peso = reader["Peso"].ToString(),
                             Altura = reader["Altura"].ToString(),
-                            IMC = reader["IMC"].ToString()
+                            IMC = reader["IMC"].ToString(),
+                            ID_TipoMembresia = Convert.ToInt32(reader["ID_TipoMembresia"])
                         };
                     }
                 }
             }
 
             return user;
+        }
+
+        public void UpdateMembership(string userId, int membershipType)
+        {
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "UPDATE [User] SET ID_TipoMembresia = @membershipType WHERE ID = @userId";
+                command.Parameters.AddWithValue("@membershipType", membershipType);
+                command.Parameters.AddWithValue("@userId", Guid.Parse(userId));
+                command.ExecuteNonQuery();
+            }
         }
 
     }

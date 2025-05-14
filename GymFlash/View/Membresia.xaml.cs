@@ -46,15 +46,26 @@ namespace GymFlash.View
 
         private void Button_MembresiaBasica(object sender, RoutedEventArgs e)
         {
-            MembresiaComprada ventanaBasica = new MembresiaComprada();
-            ventanaBasica.Show();
-            
+            var userRepository = new UserRepository();
+            userRepository.UpdateMembership(usuario.Id, 2); // 2 = Básica
+
+            // Actualiza el objeto usuario localmente
+            usuario.ID_TipoMembresia = 2;
+
+            MembresiaComprada ventana = new MembresiaComprada();
+            ventana.Show();
         }
 
         private void Button_MembresiaPremium(object sender, RoutedEventArgs e)
         {
-            MembresiaComprada ventanaBasica = new MembresiaComprada();
-            ventanaBasica.Show();
+            var userRepository = new UserRepository();
+            userRepository.UpdateMembership(usuario.Id, 3); // 3 = Premium
+
+            // Actualiza el objeto usuario localmente
+            usuario.ID_TipoMembresia = 3;
+
+            MembresiaComprada ventana = new MembresiaComprada();
+            ventana.Show();
         }
     }
 }

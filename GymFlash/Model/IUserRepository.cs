@@ -15,5 +15,6 @@ namespace GymFlash.Model
         void Remove(int id);
         UserModel GetById(int id);
         UserModel GetByUsername(string username);
+        void UpdateMembership(string userId, int membershipType);
     }
 }
