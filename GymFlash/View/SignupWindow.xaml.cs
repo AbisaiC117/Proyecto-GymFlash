@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GymFlash.Model;
+using GymFlash.Repositories;
 
 namespace GymFlash.View
 {
@@ -27,12 +29,22 @@ namespace GymFlash.View
         private void Registrarse_Click(object sender, RoutedEventArgs e)
         {
             string nombre = NombreTextBox.Text;
+            string apellido = ApellidoTextBox.Text;
             string email = EmailTextBox.Text;
+            string username = UsernameTextBox.Text;
+            string edad = EdadTextBox.Text;
+            string peso = PesoTextBox.Text;
+            string altura = AlturaTextBox.Text;
             string password = PasswordBox.Password;
             string confirmarPassword = ConfirmarPasswordBox.Password;
 
             if (string.IsNullOrWhiteSpace(nombre) ||
+                string.IsNullOrWhiteSpace(apellido) ||
                 string.IsNullOrWhiteSpace(email) ||
+                string.IsNullOrWhiteSpace(username) ||
+                string.IsNullOrWhiteSpace(edad) ||
+                string.IsNullOrWhiteSpace(peso) ||
+                string.IsNullOrWhiteSpace(altura) ||
                 string.IsNullOrWhiteSpace(password) ||
                 string.IsNullOrWhiteSpace(confirmarPassword))
             {
@@ -46,9 +58,43 @@ namespace GymFlash.View
                 return;
             }
 
-            // Aquí podrías agregar lógica para guardar el usuario en la base de datos
-            MessageBox.Show("Cuenta creada exitosamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
-            this.Close(); // o redirigir a otra ventana
+            // Calcular el IMC (Índice de Masa Corporal)
+            double pesoVal, alturaVal, imcVal;
+            if (!double.TryParse(peso, out pesoVal) || !double.TryParse(altura, out alturaVal) || alturaVal <= 0)
+            {
+                MessageBox.Show("Peso o altura inválidos.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            imcVal = pesoVal / (alturaVal * alturaVal);
+
+            try
+            {
+                var userModel = new UserModel
+                {
+                    Username = username,
+                    Password = password, // Idealmente deberías cifrar esta contraseña
+                    Name = nombre,
+                    Lastname = apellido,
+                    Email = email,
+                    Edad = edad,
+                    Peso = peso,
+                    Altura = altura,
+                    IMC = imcVal.ToString("F2"),
+                    ID_TipoMembresia = 1 // Asignar un ID de membresía por defecto
+
+
+                };
+
+                IUserRepository userRepository = new UserRepository();
+                userRepository.Add(userModel);
+
+                MessageBox.Show("Cuenta creada exitosamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close(); // o abrir LoginWindow
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar usuario: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

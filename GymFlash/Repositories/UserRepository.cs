@@ -13,6 +13,36 @@ namespace GymFlash.Repositories
     {
         public void Add(UserModel userModel)
         {
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+
+                // Agregado ID_TipoMembresia en la consulta SQL
+                command.CommandText = @"INSERT INTO [User] 
+                    (Username, Password, Name, Lastname, Email, Edad, Peso, Altura, IMC, ID_TipoMembresia) 
+                    VALUES 
+                    (@username, @password, @name, @lastname, @email, @edad, @peso, @altura, @imc, @ID_TipoMembresia)";
+
+                command.Parameters.AddWithValue("@username", userModel.Username);
+                command.Parameters.AddWithValue("@password", userModel.Password);
+                command.Parameters.AddWithValue("@name", userModel.Name);
+                command.Parameters.AddWithValue("@lastname", userModel.Lastname);
+                command.Parameters.AddWithValue("@email", userModel.Email);
+
+                // Conversión segura de tipos
+                command.Parameters.AddWithValue("@edad", int.Parse(userModel.Edad));
+                command.Parameters.AddWithValue("@peso", decimal.Parse(userModel.Peso));
+                command.Parameters.AddWithValue("@altura", decimal.Parse(userModel.Altura));
+                command.Parameters.AddWithValue("@imc", decimal.Parse(userModel.IMC));
+
+                // Asegúrate de que sea int en el modelo
+                command.Parameters.AddWithValue("@ID_TipoMembresia", userModel.ID_TipoMembresia);
+
+                command.ExecuteNonQuery();
+            }
+
             throw new NotImplementedException();
         }
 
