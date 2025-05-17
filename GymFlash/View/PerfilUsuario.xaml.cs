@@ -51,5 +51,10 @@ namespace GymFlash.View
         {
             CompartirPerfil compartirPerfil = new CompartirPerfil();
             compartirPerfil.ShowDialog();        }
+
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
     }
 }

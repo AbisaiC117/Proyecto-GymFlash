@@ -42,21 +42,55 @@ namespace GymFlash
         {
             if (DataContext is LoginWindowModel vm)
             {
-                var credenciales = new NetworkCredential(vm.Usuario, vm.Contrasena);
-                UserRepository userRepository = new UserRepository();
-
-                bool usuarioValido = userRepository.AuthenticateUser(credenciales);
-                if (usuarioValido)
+                // Validación de campos vacíos
+                if (string.IsNullOrWhiteSpace(vm.Usuario))
                 {
-                    UserModel usuario = userRepository.GetByUsername(vm.Usuario);
-
-                    HomeWindow home = new HomeWindow(usuario);
-                    home.Show();
-                    this.Close();
+                    MessageBox.Show("Por favor ingrese su nombre de usuario.", "Campo requerido", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
                 }
-                else
+
+                if (string.IsNullOrWhiteSpace(vm.Contrasena))
                 {
-                    MessageBox.Show("Usuario o contraseña incorrectos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Por favor ingrese su contraseña.", "Campo requerido", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                // Validación de longitud mínima de contraseña
+                if (vm.Contrasena.Length < 6)
+                {
+                    MessageBox.Show("La contraseña debe tener al menos 6 caracteres.", "Contraseña inválida", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                try
+                {
+                    var credenciales = new NetworkCredential(vm.Usuario, vm.Contrasena);
+                    UserRepository userRepository = new UserRepository();
+
+                    bool usuarioValido = userRepository.AuthenticateUser(credenciales);
+                    if (usuarioValido)
+                    {
+                        UserModel usuario = userRepository.GetByUsername(vm.Usuario);
+
+                        // Validación adicional por si el usuario existe pero tiene datos inconsistentes
+                        if (usuario == null)
+                        {
+                            MessageBox.Show("Error al cargar los datos del usuario. Por favor contacte al administrador.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            return;
+                        }
+
+                        HomeWindow home = new HomeWindow(usuario);
+                        home.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario o contraseña incorrectos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show($"Ocurrió un error al intentar iniciar sesión: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }

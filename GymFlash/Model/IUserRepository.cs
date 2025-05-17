@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace GymFlash.Model
 {
@@ -16,5 +17,8 @@ namespace GymFlash.Model
         UserModel GetById(int id);
         UserModel GetByUsername(string username);
         void UpdateMembership(string userId, int membershipType);
+        void Registrarse_Click(object sender, RoutedEventArgs e);
+        bool UserExists(string username);
+        bool EmailExists(string email);
     }
 }
