@@ -78,7 +78,7 @@ CREATE TABLE Ejercicio (
 );
 
 INSERT INTO [User] (
-    Username, [Password], [Name], Apellido, Email, Edad, Peso, Altura, IMC, ID_TipoMembresia, ID_Role
+    Username, [Password], [Name], LastName, Email, Edad, Peso, Altura, IMC, ID_TipoMembresia, ID_Role
 ) VALUES
 ('admin', '1234', 'Carlos', 'Hernández', 'admin@example.com', 28, 75.5, 1.75, '25', 1, 1), -- Administrador
 ('jdoe', 'qwerty', 'Juan', 'Doe', 'jdoe@example.com', 32, 80.0, 1.80, '24', 2, 2),
