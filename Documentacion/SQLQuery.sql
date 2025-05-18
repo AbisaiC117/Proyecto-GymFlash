@@ -29,7 +29,7 @@ CREATE TABLE [User]
     Username NVARCHAR(50) UNIQUE NOT NULL,
     [Password] NVARCHAR(100) NOT NULL,
     [Name] NVARCHAR(50) NOT NULL,
-    Apellido NVARCHAR(50) NOT NULL,
+    LastName NVARCHAR(50) NOT NULL,
     Email NVARCHAR(100) UNIQUE NOT NULL,
     Edad INT,
     Peso FLOAT,
