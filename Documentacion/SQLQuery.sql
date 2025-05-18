@@ -38,7 +38,7 @@ CREATE TABLE [User]
     ID_TipoMembresia INT NOT NULL,
     ID_Role INT NOT NULL DEFAULT 2,
     FOREIGN KEY (ID_TipoMembresia) REFERENCES TipoMembresia(ID_TipoMembresia),
-    FOREIGN KEY (ID_Role) REFERENCES TipoUsuario(ID_TipoUsuario)
+    FOREIGN KEY (ID_TipoUsuario) REFERENCES TipoUsuario(ID_TipoUsuario)
 );
 
 CREATE TABLE Entrenador (
