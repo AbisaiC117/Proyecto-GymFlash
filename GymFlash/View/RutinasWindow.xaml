@@ -37,7 +37,7 @@
         </Style>
     </Window.Resources>
 
-    <DockPanel Margin="0,0,0,-6">
+    <DockPanel>
         <!-- Barra de navegación superior -->
         <Border Background="#7B0000" Height="50" DockPanel.Dock="Top">
             <DockPanel>
@@ -48,12 +48,13 @@
                     <Button Content="Membresías" Click="Membresias_Click" Style="{StaticResource NormalButtonStyle}" />
                     <Button Content="Rutinas" Click="Rutinas_Click" Style="{StaticResource MenuButtonStyle}" />
                     <Button Content="Perfil" Click="Perfil_Click" Style="{StaticResource NormalButtonStyle}" />
+                    <Button Content="Tienda" Click="Tienda_Click" Style="{StaticResource NormalButtonStyle}" />
                 </StackPanel>
             </DockPanel>
         </Border>
 
         <!-- Contenido principal -->
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Height="690" Width="1016">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="30">
                 <TextBlock Text="Nuestras Rutinas" FontSize="28" FontWeight="Bold" Foreground="#333" Margin="0 20 0 10" HorizontalAlignment="Center"/>
                 <TextBlock Text="Programas personalizados para cada objetivo y nivel de experiencia." FontSize="16" HorizontalAlignment="Center" Foreground="Gray" Margin="0 0 0 30"/>

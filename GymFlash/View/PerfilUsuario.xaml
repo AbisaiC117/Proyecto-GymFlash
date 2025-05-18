@@ -55,10 +55,10 @@
                             <Button Content="Membresías" Click="Membresias_Click" Style="{StaticResource NormalButtonStyle}" />
                             <Button Content="Rutinas" Click="Rutinas_Click" Style="{StaticResource NormalButtonStyle}" />
                             <Button Content="Perfil" Click="Perfil_Click" Style="{StaticResource MenuButtonStyle}" />
+                            <Button Content="Tienda" Click="Tienda_Click" Style="{StaticResource NormalButtonStyle}" />
                         </StackPanel>
                     </DockPanel>
                 </Border>
-                <!-- Barra de navegación superior -->
             </StackPanel>
         </StackPanel>
 

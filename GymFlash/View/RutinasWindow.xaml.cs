@@ -41,7 +41,9 @@ namespace GymFlash
 
         private void Tienda_Click(object sender, RoutedEventArgs e)
         {
-            //falta la ventana de tienda
+            TiendaWindow tiendaWindow = new TiendaWindow(usuario);
+            tiendaWindow.Show();
+            this.Close();
         }
     }
 }

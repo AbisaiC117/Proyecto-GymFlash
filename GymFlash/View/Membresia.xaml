@@ -19,13 +19,15 @@
         </Grid.RowDefinitions>
 
         <!-- Encabezado -->
-        <StackPanel Grid.Row="0" Background="#8B0000" Margin="0,0,0,1">
+        <StackPanel Background="#8B0000" Height="62" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,10">
+                <!-- Estilos -->
                 <StackPanel.Resources>
                     <Style x:Key="MenuButtonStyle" TargetType="Button">
                         <Setter Property="Foreground" Value="White"/>
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
                         <Setter Property="FontWeight" Value="Bold"/>
                         <Setter Property="Margin" Value="20,0,0,0"/>
                         <Setter Property="Padding" Value="0,0,0,5"/>
@@ -40,6 +42,7 @@
                         <Setter Property="Foreground" Value="White"/>
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
                         <Setter Property="FontWeight" Value="Normal"/>
                         <Setter Property="Margin" Value="20,0,0,0"/>
                         <Setter Property="Padding" Value="0,0,0,5"/>
@@ -54,12 +57,13 @@
                 <Border Background="#8B0000" Height="50">
                     <DockPanel>
                         <TextBlock Text="GymFlash" FontWeight="Bold" FontSize="22"
-                   Foreground="White" Margin="15,0" VerticalAlignment="Center" />
+           Foreground="White" Margin="15,0" VerticalAlignment="Center" />
                         <StackPanel Orientation="Horizontal" Width="361" DockPanel.Dock="Left">
                             <Button Content="Inicio" Click="Button_Inicio" Style="{StaticResource NormalButtonStyle}" />
-                            <Button Content="Membresías" Click="Button_Membresia" Style="{StaticResource MenuButtonStyle}" />
+                            <Button Content="Membresías" Click="Button_Membresia" Style="{StaticResource NormalButtonStyle}" />
                             <Button Content="Rutinas" Click="Button_Rutinas" Style="{StaticResource NormalButtonStyle}" />
-                            <Button Content="Perfil" Click="Button_Perfil" Style="{StaticResource NormalButtonStyle}" />
+                            <Button Content="Perfil" Click="Button_Perfil" Style="{StaticResource MenuButtonStyle}" />
+                            <Button Content="Tienda" Click="Button_Tienda" Style="{StaticResource NormalButtonStyle}" />
                         </StackPanel>
                     </DockPanel>
                 </Border>

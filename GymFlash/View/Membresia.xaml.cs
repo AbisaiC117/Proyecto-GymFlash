@@ -42,7 +42,9 @@ namespace GymFlash.View
         }
         private void Button_Tienda(object sender, RoutedEventArgs e)
         {
-            // Puedes agregar ventana de tienda aquí si existe.
+            TiendaWindow tiendaWindow = new TiendaWindow(usuario); 
+            tiendaWindow.Show();
+            this.Close();
         }
 
         private void Button_MembresiaBasica(object sender, RoutedEventArgs e)

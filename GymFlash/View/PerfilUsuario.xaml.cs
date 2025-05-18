@@ -46,6 +46,14 @@ namespace GymFlash.View
 
         private void Perfil_Click(object sender, RoutedEventArgs e)
         {
+            //Ya esta en la pantalla Perfil
+        }
+
+        private void Tienda_Click(object sender, RoutedEventArgs e)
+        {
+            TiendaWindow tiendaWindow = new TiendaWindow(_usuario);
+            tiendaWindow.Show();
+            this.Close();
         }
         private void CompartirPerfil_Click(object sender, RoutedEventArgs e)
         {
@@ -56,5 +64,7 @@ namespace GymFlash.View
         {
 
         }
+
+        
     }
 }

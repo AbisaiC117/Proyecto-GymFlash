@@ -21,5 +21,33 @@ namespace GymFlash.View
             ventanaInicio.Show();
             this.Close();
         }
+
+        private void Membresias_Button(object sender, RoutedEventArgs e)
+        {
+            Membresia ventanaMembresia = new Membresia(usuario);
+            ventanaMembresia.Show();
+            this.Close();
+        }
+
+
+
+        private void Tienda_Button(object sender, RoutedEventArgs e)
+        {
+            //Ya esta en la pantalla
+        }
+
+        private void Rutinas_Button(object sender, RoutedEventArgs e)
+        {
+            RutinasWindow ventanaRutinas = new RutinasWindow(usuario);
+            ventanaRutinas.Show();
+            this.Close();
+        }
+
+        private void Perfil_Button(object sender, RoutedEventArgs e)
+        {
+            PerfilUsuario ventanaPerfil = new PerfilUsuario(usuario);
+            ventanaPerfil.Show();
+            this.Close();
+        }
     }
 }

@@ -1,3 +1,4 @@
+CREATE DATABASE GymFlashDB
 GO
 USE GymFlashDB;
 GO
@@ -34,7 +35,7 @@ CREATE TABLE [User]
     Altura FLOAT,
     IMC NVARCHAR(5),
     ID_TipoMembresia INT NOT NULL,
-    ID_Role INT NOT NULL DEFAULT 2,
+    ID_TipoUsuario INT NOT NULL DEFAULT 2,
     FOREIGN KEY (ID_TipoMembresia) REFERENCES TipoMembresia(ID_TipoMembresia),
     FOREIGN KEY (ID_TipoUsuario) REFERENCES TipoUsuario(ID_TipoUsuario)
 );
@@ -122,4 +123,3 @@ CREATE TABLE Compra (
         REFERENCES Articulos(Id) ON DELETE CASCADE
 );
 
-GO

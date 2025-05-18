@@ -40,7 +40,8 @@
         </Style>
     </Window.Resources>
 
-    <DockPanel>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <DockPanel>
         <!-- Barra superior -->
         <Border Background="#7B0000" Height="50" DockPanel.Dock="Top">
             <DockPanel>
@@ -48,10 +49,10 @@
                            Foreground="White" Margin="15,0" VerticalAlignment="Center" />
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
                     <Button Content="Inicio" Style="{StaticResource NormalButtonStyle}" Click="Inicio_Button" />
-                    <Button Content="Membresías" Style="{StaticResource NormalButtonStyle}" />
-                    <Button Content="Rutinas" Style="{StaticResource NormalButtonStyle}" />
-                    <Button Content="Tienda" Style="{StaticResource MenuButtonStyle}" />
-                    <Button Content="Perfil" Style="{StaticResource NormalButtonStyle}" />
+                    <Button Content="Membresías" Style="{StaticResource NormalButtonStyle}" Click="Membresias_Button"/>
+                    <Button Content="Rutinas" Style="{StaticResource NormalButtonStyle}" Click="Rutinas_Button"/>
+                    <Button Content="Tienda" Style="{StaticResource MenuButtonStyle}" Click="Tienda_Button"/>
+                    <Button Content="Perfil" Style="{StaticResource NormalButtonStyle}" Click="Perfil_Button"/>
                 </StackPanel>
             </DockPanel>
         </Border>
@@ -95,4 +96,5 @@
             </StackPanel>
         </ScrollViewer>
     </DockPanel>
+    </ScrollViewer>
 </Window>
