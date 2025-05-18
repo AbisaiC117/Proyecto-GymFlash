@@ -8,7 +8,7 @@
     <Grid Margin="10">
         <StackPanel>
             <TextBlock Text="Editar Perfil de Usuario" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-
+            <!-- Pantalla pa editar perfil-->
             <!-- Nombre -->
             <TextBlock Text="Nombre"/>
             <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Margin="0,5"/>

@@ -64,7 +64,7 @@ namespace GymFlash.View
                 MessageBox.Show("Por favor, completa todos los campos.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-
+            
             // Validación de formato de email
             if (!IsValidEmail(email))
             {
@@ -78,7 +78,7 @@ namespace GymFlash.View
                 MessageBox.Show("Nombre y apellido solo deben contener letras.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-
+                // ----------- validaciones pa contrasena -----------
             // Validación de contraseñas coincidentes
             if (password != confirmarPassword)
             {
@@ -112,7 +112,7 @@ namespace GymFlash.View
                 return;
             }
 
-
+            //--------------------------------------------
 
             // Validación de edad
             // apartir de 18 hasta 70 por que a fambio le gusto asi
