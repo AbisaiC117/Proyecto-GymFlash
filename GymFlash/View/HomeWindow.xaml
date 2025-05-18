@@ -54,6 +54,7 @@
                         <Button Content="Membresías" Click="Membresia_Button" Style="{StaticResource NormalButtonStyle}" />
                         <Button Content="Rutinas" Click="Rutinas_Button" Style="{StaticResource NormalButtonStyle}" />
                         <Button Content="Perfil" Click="Perfil_Button" Style="{StaticResource NormalButtonStyle}" />
+                        <Button Content="Tienda" Click="Tienda_Button" Style="{StaticResource NormalButtonStyle}" />
                     </StackPanel>
                 </DockPanel>
             </Border>

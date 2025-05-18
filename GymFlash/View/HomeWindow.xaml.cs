@@ -59,5 +59,12 @@ namespace GymFlash.View
                 UseShellExecute = true
             });
         }
+
+        private void Tienda_Button(object sender, RoutedEventArgs e)
+        {
+            TiendaWindow TiendaWindow = new TiendaWindow(usuario);
+            TiendaWindow.Show();
+            this.Close();
+        }
     }
 }

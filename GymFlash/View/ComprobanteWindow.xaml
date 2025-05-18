@@ -1,0 +1,22 @@
+﻿<Window x:Class="GymFlash.View.ComprobanteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Comprobante de Compra"
+        Height="300" Width="400"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid Margin="20">
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock Text="Comprobante de Compra" FontSize="18" FontWeight="Bold" TextAlignment="Center"/>
+            <TextBlock Text="Usuario:" FontWeight="Bold"/>
+            <TextBlock Text="{Binding UsuarioNombre}" FontSize="16"/>
+            <TextBlock Text="Producto:" FontWeight="Bold"/>
+            <TextBlock Text="{Binding ArticuloNombre}" FontSize="16"/>
+            <TextBlock Text="Cantidad:" FontWeight="Bold"/>
+            <TextBlock Text="{Binding Cantidad}" FontSize="16"/>
+            <TextBlock Text="Fecha de Compra:" FontWeight="Bold"/>
+            <TextBlock Text="{Binding FechaCompra}" FontSize="16"/>
+            <Button Content="Cerrar" Click="CerrarVentana" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

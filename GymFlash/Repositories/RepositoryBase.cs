@@ -16,7 +16,7 @@ namespace GymFlash.Repositories
         public RepositoryBase()
         {
             _connectionString =
-                "Server = LAPTOP-2DJI3GM9\\GESTIONVS;" +
+                "Server = DESKTOP-B68VNIO\\VSGESTION;" +
                 "Database=GymFlashDB;" +
                 "Integrated Security = true";
         }

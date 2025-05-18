@@ -55,19 +55,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\ArticuloModel.cs" />
     <Compile Include="Model\IUserRepository.cs" />
     <Compile Include="Model\UserModel.cs" />
+    <Compile Include="Repositories\ArticuloRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="ViewModel\ArticuloViewModel.cs" />
     <Compile Include="ViewModel\LoginWindowModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelCommand.cs" />
     <Compile Include="View\CompartirPerfil.xaml.cs">
       <DependentUpon>CompartirPerfil.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ComprobanteWindow.xaml.cs">
+      <DependentUpon>ComprobanteWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EditarPerfil.xaml.cs">
       <DependentUpon>EditarPerfil.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ImagePathConverter.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -86,8 +93,15 @@
     <Compile Include="View\SignupWindow.xaml.cs">
       <DependentUpon>SignupWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\TiendaWindow.xaml.cs">
+      <DependentUpon>TiendaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\WidthToHeightConverter.cs" />
     <Page Include="View\CompartirPerfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ComprobanteWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,6 +153,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SignupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TiendaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

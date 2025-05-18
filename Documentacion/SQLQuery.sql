@@ -2,8 +2,6 @@ GO
 USE GymFlashDB;
 GO
 
-
-
 CREATE TABLE TipoMembresia (
     ID_TipoMembresia INT PRIMARY KEY IDENTITY(1,1),
     Descripcion NVARCHAR(50) NOT NULL
@@ -95,5 +93,33 @@ SELECT @EntrenadorID = ID_Entrenador FROM Entrenador;
 
 INSERT INTO Rutina (Nombre, Descripcion, ImagenURL, ID_Entrenador)
 VALUES ('Rutina Básica', 'Rutina de 3 días para principiantes', 'https://miweb.com/imagenes/rutina1.jpg', @EntrenadorID);
+
+CREATE TABLE Articulos (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Nombre NVARCHAR(100),
+    Precio DECIMAL(10, 2),
+    Cantidad INT,
+    Imagen NVARCHAR(255) -- Ruta a la imagen local o URL
+);
+
+INSERT INTO Articulos (Nombre, Precio, Cantidad, Imagen) VALUES
+('Proteína Whey', 699.00, 10, 'https://gnc.com.mx/media/catalog/product/1/0/107206001-a.jpg'),
+('Creatina Monohidratada', 299.00, 15, 'https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/nrx/nrx00074/y/39.jpg'),
+('Guantes Deportivos', 149.00, 20, 'https://m.media-amazon.com/images/I/61alfP2RogL._AC_UF894,1000_QL80_.jpg'),
+('Cinturón para Levantamiento', 399.00, 5, 'https://i5.walmartimages.com/asr/bcad4744-b22d-47bc-ad45-5aece3e07585.e9ebc9e231c977172acbf1fe2c4ce3b8.jpeg');
+
+CREATE TABLE Compra (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    IdUsuario uniqueidentifier NOT NULL,
+    IdArticulo INT NOT NULL,
+    Cantidad INT NOT NULL CHECK (Cantidad > 0),
+    Fecha DATETIME NOT NULL DEFAULT GETDATE(),
+
+    CONSTRAINT FK_Compra_Usuario FOREIGN KEY (IdUsuario)
+        REFERENCES [User](Id) ON DELETE CASCADE,
+
+    CONSTRAINT FK_Compra_Articulo FOREIGN KEY (IdArticulo)
+        REFERENCES Articulos(Id) ON DELETE CASCADE
+);
 
 GO
