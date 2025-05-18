@@ -92,20 +92,42 @@ namespace GymFlash.View
                 MessageBox.Show("La contraseña debe tener al menos 8 caracteres.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+            //validacion de contrasena para quie minimo tenga una mayuscula
+            if (!password.Any(char.IsUpper))
+            {
+                MessageBox.Show("La contraseña debe contener al menos una letra mayúscula.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            //validacion para que la contrasena debe tner minimo un numero
+            if (!password.Any(char.IsDigit))
+            {
+                MessageBox.Show("La contraseña debe contener al menos un número.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            
+            //validacion ppara que contrasena tanga minimo un caracter especial como .,/\[]-= etc 
+            if (!password.Any(c => !char.IsLetterOrDigit(c)))
+            {
+                MessageBox.Show("La contraseña debe contener al menos un carácter especial.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+
 
             // Validación de edad
+            // apartir de 18 hasta 70 por que a fambio le gusto asi
             int edadVal;
-            if (!int.TryParse(edad, out edadVal) || edadVal < 12 || edadVal > 120)
+            if (!int.TryParse(edad, out edadVal) || edadVal <= 18 || edadVal >= 70)
             {
-                MessageBox.Show("Por favor, ingresa una edad válida (entre 12 y 120 años).", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Por favor, ingresa una edad válida (entre 18 y 70 años).", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             // Calcular el IMC (Índice de Masa Corporal)
             double pesoVal, alturaVal, imcVal;
-            if (!double.TryParse(peso, out pesoVal) || pesoVal <= 0 || pesoVal > 300)
+            if (!double.TryParse(peso, out pesoVal) || pesoVal <= 35.0 || pesoVal >= 300)
             {
-                MessageBox.Show("Por favor, ingresa un peso válido (entre 0 y 300 kg).", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Por favor, ingresa un peso válido (entre 35.0 y 300 kg).", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 

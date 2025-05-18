@@ -15,7 +15,7 @@
 
             <!-- Apellido -->
             <TextBlock Text="Apellido"/>
-            <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" Margin="0,5"/>
+            <TextBox Text="{Binding Lastname, UpdateSourceTrigger=PropertyChanged}" Margin="0,5"/>
 
             <!-- Email -->
             <TextBlock Text="Email"/>
