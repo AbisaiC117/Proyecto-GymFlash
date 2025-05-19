@@ -82,7 +82,7 @@ namespace GymFlash
                         // Verificar el tipo de usuario
                         if (usuario.ID_TipoUsuario == 1) // Administrador
                         {
-                            PantallaAdmin adminWindow = new PantallaAdmin(usuario);
+                            AdminPanelWindow adminWindow = new AdminPanelWindow(usuario);
                             adminWindow.Show();
                         }
                         else // Usuario normal

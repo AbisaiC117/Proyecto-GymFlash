@@ -1,6 +1,6 @@
-﻿using System.Windows;
-using GymFlash.Model;
+﻿using GymFlash.Model;
 using GymFlash.View;
+using System.Windows;
 
 namespace GymFlash
 {

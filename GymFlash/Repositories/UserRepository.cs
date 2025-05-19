@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GymFlash.Model;
+using System;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using GymFlash.Model;
 
 namespace GymFlash.Repositories
 {
-    public class UserRepository : RepositoryBase,IUserRepository
+    public class UserRepository : RepositoryBase, IUserRepository
     {
         public void Add(UserModel userModel)
         {
@@ -38,7 +34,7 @@ namespace GymFlash.Repositories
 
                 command.ExecuteNonQuery();
             }
-            
+
         }
 
         public bool AuthenticateUser(NetworkCredential credential)
@@ -54,7 +50,7 @@ namespace GymFlash.Repositories
 
                 int count = (int)command.ExecuteScalar();
                 return count > 0;
-            }        
+            }
         }
 
 

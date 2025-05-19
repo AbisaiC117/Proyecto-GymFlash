@@ -1,7 +1,7 @@
-﻿using System;
+﻿using GymFlash.Model;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using GymFlash.Model;
 
 namespace GymFlash.Repositories
 {
@@ -71,6 +71,60 @@ namespace GymFlash.Repositories
                     command.Parameters.AddWithValue("@cantidad", cantidad);
                     command.Parameters.AddWithValue("@idArticulo", idArticulo);
 
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void CrearArticulo(ArticuloModel articulo)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                string query = "INSERT INTO Articulos (Nombre, Precio, Cantidad, Imagen) VALUES (@Nombre, @Precio, @Cantidad, @Imagen)";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nombre", articulo.Nombre);
+                    command.Parameters.AddWithValue("@Precio", articulo.Precio);
+                    command.Parameters.AddWithValue("@Cantidad", articulo.Cantidad);
+                    command.Parameters.AddWithValue("@Imagen", articulo.Imagen);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void ActualizarArticulo(ArticuloModel articulo)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                string query = "UPDATE Articulos SET Nombre=@Nombre, Precio=@Precio, Cantidad=@Cantidad, Imagen=@Imagen WHERE Id=@Id";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", articulo.Id);
+                    command.Parameters.AddWithValue("@Nombre", articulo.Nombre);
+                    command.Parameters.AddWithValue("@Precio", articulo.Precio);
+                    command.Parameters.AddWithValue("@Cantidad", articulo.Cantidad);
+                    command.Parameters.AddWithValue("@Imagen", articulo.Imagen);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void EliminarArticulo(int id)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                string query = "DELETE FROM Articulos WHERE Id=@Id";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
                     command.ExecuteNonQuery();
                 }
             }

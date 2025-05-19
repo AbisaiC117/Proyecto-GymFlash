@@ -1,7 +1,7 @@
 ﻿using GymFlash.Model;
-using System.Windows;
 using GymFlash.Repositories;
 using System;
+using System.Windows;
 
 namespace GymFlash.View
 {
@@ -42,7 +42,7 @@ namespace GymFlash.View
         }
         private void Button_Tienda(object sender, RoutedEventArgs e)
         {
-            TiendaWindow tiendaWindow = new TiendaWindow(usuario); 
+            TiendaWindow tiendaWindow = new TiendaWindow(usuario);
             tiendaWindow.Show();
             this.Close();
         }

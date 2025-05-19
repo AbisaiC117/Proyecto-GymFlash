@@ -1,5 +1,5 @@
-﻿using System.Windows;
-using GymFlash.Model;
+﻿using GymFlash.Model;
+using System.Windows;
 
 namespace GymFlash.View
 {
@@ -58,7 +58,8 @@ namespace GymFlash.View
         private void CompartirPerfil_Click(object sender, RoutedEventArgs e)
         {
             CompartirPerfil compartirPerfil = new CompartirPerfil();
-            compartirPerfil.ShowDialog();        }
+            compartirPerfil.ShowDialog();
+        }
 
         private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {

@@ -1,15 +1,14 @@
-﻿using System;
+﻿using GymFlash.Model;
+using GymFlash.View.PantallaAdmin;
 using System.Windows;
-using GymFlash.Model;
-using GymFlash.View;
 
 namespace GymFlash.View
 {
-    public partial class PantallaAdmin : Window
+    public partial class AdminPanelWindow : Window
     {
         private UserModel _currentUser;
 
-        public PantallaAdmin(UserModel user)
+        public AdminPanelWindow(UserModel user)
         {
             InitializeComponent();
             _currentUser = user;
@@ -36,7 +35,7 @@ namespace GymFlash.View
         // Método para el botón "Gestionar Administradores"
         private void Button_GestionarAdministradores_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         // Método para cerrar sesión
@@ -45,6 +44,13 @@ namespace GymFlash.View
             var MainWindow = new MainWindow();
             MainWindow.Show();
             this.Close();
+        }
+
+        private void Button_GestionarArticulos_Click(object sender, RoutedEventArgs e)
+        {
+            GestionarArticulosWindow articulosWindow = new GestionarArticulosWindow(_currentUser);
+            articulosWindow.Show();
+            this.Close(); 
         }
     }
 }

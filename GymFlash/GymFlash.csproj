@@ -65,6 +65,9 @@
     <Compile Include="ViewModel\LoginWindowModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelCommand.cs" />
+    <Compile Include="View\Admin\EditarArticuloWindow.xaml.cs">
+      <DependentUpon>EditarArticuloWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CompartirPerfil.xaml.cs">
       <DependentUpon>CompartirPerfil.xaml</DependentUpon>
     </Compile>
@@ -84,7 +87,10 @@
     <Compile Include="View\MembresiaComprada.xaml.cs">
       <DependentUpon>MembresiaComprada.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PantallaAdmin\PantallaAdmin.xaml.cs">
+    <Compile Include="View\Admin\GestionarArticulosWindow.xaml.cs">
+      <DependentUpon>GestionarArticulosWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\PantallaAdmin.xaml.cs">
       <DependentUpon>PantallaAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PerfilUsuario.xaml.cs">
@@ -100,6 +106,10 @@
       <DependentUpon>TiendaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WidthToHeightConverter.cs" />
+    <Page Include="View\Admin\EditarArticuloWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CompartirPerfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -147,9 +157,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\PantallaAdmin\PantallaAdmin.xaml">
+    <Page Include="View\Admin\GestionarArticulosWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Admin\PantallaAdmin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PerfilUsuario.xaml">
       <SubType>Designer</SubType>

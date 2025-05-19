@@ -1,5 +1,5 @@
-﻿using System.Collections.ObjectModel;
-using GymFlash.Model;
+﻿using GymFlash.Model;
+using System.Collections.ObjectModel;
 
 namespace GymFlash.ViewModel
 {

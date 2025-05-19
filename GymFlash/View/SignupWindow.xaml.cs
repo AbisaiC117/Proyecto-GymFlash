@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GymFlash.Model;
+using GymFlash.Repositories;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using GymFlash.Model;
-using GymFlash.Repositories;
-using System.Text.RegularExpressions;
 
 namespace GymFlash.View
 {
@@ -64,7 +54,7 @@ namespace GymFlash.View
                 MessageBox.Show("Por favor, completa todos los campos.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            
+
             // Validación de formato de email
             if (!IsValidEmail(email))
             {
@@ -78,7 +68,7 @@ namespace GymFlash.View
                 MessageBox.Show("Nombre y apellido solo deben contener letras.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-                // ----------- validaciones pa contrasena -----------
+            // ----------- validaciones pa contrasena -----------
             // Validación de contraseñas coincidentes
             if (password != confirmarPassword)
             {
@@ -104,7 +94,7 @@ namespace GymFlash.View
                 MessageBox.Show("La contraseña debe contener al menos un número.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            
+
             //validacion ppara que contrasena tanga minimo un caracter especial como .,/\[]-= etc 
             if (!password.Any(c => !char.IsLetterOrDigit(c)))
             {
@@ -161,7 +151,7 @@ namespace GymFlash.View
                 userRepository.Add(userModel);
 
                 MessageBox.Show("Cuenta creada exitosamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
-               //para que abra la ventana de login despues de crear la cuneta 
+                //para que abra la ventana de login despues de crear la cuneta 
                 LoginWindow loginWindow = new LoginWindow();
                 loginWindow.Show();
                 this.Close();
