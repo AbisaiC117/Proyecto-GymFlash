@@ -26,7 +26,7 @@
             <DockPanel>
                 <TextBlock Text="GymFlash" FontWeight="Bold" FontSize="22"
 Foreground="White" Margin="15,0" VerticalAlignment="Center" />
-                <Button Content="←Volver" Style="{StaticResource HeaderButtonStyle}" Click="Volver_Button"/>
+                <Button Content="Volver" Style="{StaticResource HeaderButtonStyle}" Margin="15,0" Click="Volver_Button"/>
             </DockPanel>
         </Border>
 

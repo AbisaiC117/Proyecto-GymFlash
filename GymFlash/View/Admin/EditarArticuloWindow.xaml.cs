@@ -1,7 +1,9 @@
-﻿using System.Windows;
+﻿using System.Text.RegularExpressions;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 using GymFlash.Model;
 using GymFlash.Repositories;
-using GymFlash.View.PantallaAdmin;
 
 namespace GymFlash.View
 {
@@ -22,10 +24,44 @@ namespace GymFlash.View
 
         private void GuardarCambios_Button(object sender, RoutedEventArgs e)
         {
+            // 🔹 Validación: Asegurar que los datos sean correctos 🔹
+            if (string.IsNullOrWhiteSpace(Articulo.Nombre) ||
+                Articulo.Precio <= 0 ||
+                Articulo.Cantidad < 0 ||
+                string.IsNullOrWhiteSpace(Articulo.Imagen))
+            {
+                MessageBox.Show("Todos los campos son obligatorios y deben contener valores válidos.",
+                                "Error de Validación", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            // Actualizar artículo en la base de datos
             articuloRepository.ActualizarArticulo(Articulo);
             SeRealizaronCambios = true;
             DialogResult = true;
             Close();
+        }
+
+        // 🔹 Validación: Solo permitir números en los campos de Precio y Cantidad 🔹
+        private void NumericOnlyInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !Regex.IsMatch(e.Text, "^[0-9]*$");
+        }
+
+        private void NumericOnlyPaste(object sender, DataObjectPastingEventArgs e)
+        {
+            if (e.DataObject.GetDataPresent(typeof(string)))
+            {
+                string text = (string)e.DataObject.GetData(typeof(string));
+                if (!Regex.IsMatch(text, "^[0-9]*$"))
+                {
+                    e.CancelCommand();
+                }
+            }
+            else
+            {
+                e.CancelCommand();
+            }
         }
     }
 }

@@ -1,22 +1,28 @@
 ﻿<Window x:Class="GymFlash.View.EditarArticuloWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Editar Artículo"
+        Title="Artículo"
         Background="White"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Height="300" Width="400">
+
     <Grid Margin="20">
         <StackPanel>
-            <TextBlock Text="Editar Artículo" FontSize="20" FontWeight="Bold" TextAlignment="Center"/>
+            <TextBlock Text="Artículo" FontSize="20" FontWeight="Bold" TextAlignment="Center"/>
+
             <TextBlock Text="Nombre:" FontWeight="Bold"/>
-            <TextBox Text="{Binding Nombre}"/>
+            <TextBox Text="{Binding Nombre}" />
+
             <TextBlock Text="Precio:" FontWeight="Bold"/>
-            <TextBox Text="{Binding Precio}"/>
+            <TextBox Text="{Binding Precio}" PreviewTextInput="NumericOnlyInput" DataObject.Pasting="NumericOnlyPaste"/>
+
             <TextBlock Text="Cantidad:" FontWeight="Bold"/>
-            <TextBox Text="{Binding Cantidad}"/>
+            <TextBox Text="{Binding Cantidad}" PreviewTextInput="NumericOnlyInput" DataObject.Pasting="NumericOnlyPaste"/>
+
             <TextBlock Text="URL Imagen:" FontWeight="Bold"/>
-            <TextBox Text="{Binding Imagen}"/>
+            <TextBox Text="{Binding Imagen}" />
+
             <Button Content="Guardar Cambios" Click="GuardarCambios_Button" Margin="10"/>
         </StackPanel>
     </Grid>

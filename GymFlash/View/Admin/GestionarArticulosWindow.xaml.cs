@@ -3,15 +3,18 @@ using GymFlash.Repositories;
 using GymFlash.ViewModel;
 using System.Windows;
 using System.Windows.Controls;
+using GymFlash.View.PantallaAdmin;
 
 namespace GymFlash.View.PantallaAdmin
 {
     public partial class GestionarArticulosWindow : Window
     {
         private ArticuloViewModel viewModel;
+        private UserModel usuario;
 
         public GestionarArticulosWindow(UserModel usuario)
         {
+            this.usuario = usuario; // Guardar el usuario actual
             InitializeComponent();
             viewModel = new ArticuloViewModel(usuario); // Mantener referencia al ViewModel
             this.DataContext = viewModel; // Asignar el DataContext al ViewModel
@@ -19,7 +22,9 @@ namespace GymFlash.View.PantallaAdmin
 
         private void Volver_Button(object sender, RoutedEventArgs e)
         {
-            // Acción para volver a la pantalla anterior
+            AdminPanelWindow adminPanelWindow = new AdminPanelWindow(usuario);
+            adminPanelWindow.Show();
+            this.Close();
         }
 
         private void EditarArticulo(object sender, RoutedEventArgs e)
