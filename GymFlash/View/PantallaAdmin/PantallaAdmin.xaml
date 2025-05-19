@@ -18,7 +18,7 @@
 
         <!-- Encabezado -->
         <StackPanel Background="#8B0000" Height="62" VerticalAlignment="Top">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10">
                 <StackPanel.Resources>
                     <Style x:Key="MenuButtonStyle" TargetType="Button">
                         <Setter Property="Foreground" Value="White"/>
@@ -36,18 +36,11 @@
                         </Style.Triggers>
                     </Style>
                 </StackPanel.Resources>
-                <Border Background="#8B0000" Height="50">
+                <Border Background="#8B0000" Height="50" Width="1176">
                     <DockPanel>
                         <TextBlock Text="GymFlash" FontWeight="Bold" FontSize="22"
-                   Foreground="White" Margin="15,0" VerticalAlignment="Center" />
-                        <StackPanel Orientation="Horizontal" Width="361" DockPanel.Dock="Left">
-                            <Button Content="Inicio" Click="Button_Inicio_Click" Style="{StaticResource MenuButtonStyle}" />
-                            <Button Content="Membresías" Click="Button_Membresia_Click" Style="{StaticResource MenuButtonStyle}" />
-                            <Button Content="Rutinas" Click="Button_Rutinas_Click" Style="{StaticResource MenuButtonStyle}" />
-                            <Button Content="Perfil" Click="Button_Perfil_Click" Style="{StaticResource MenuButtonStyle}" />
-                            <Button Content="Tienda" Click="Button_Tienda_Click" Style="{StaticResource MenuButtonStyle}" />
-                            <Button Content="Cerrar Sesión" Click="CerrarSesion_Click" Style="{StaticResource MenuButtonStyle}" />
-                        </StackPanel>
+                                   Foreground="White"  VerticalAlignment="Center" />
+                        <Button Content="Cerrar Sesión" Click="CerrarSesion_Click" Style="{StaticResource MenuButtonStyle}" HorizontalAlignment="Right"/>
                     </DockPanel>
                 </Border>
             </StackPanel>
@@ -75,12 +68,11 @@
             </StackPanel>
 
             <!-- Botones de Administración -->
-            <UniformGrid Grid.Row="1" Columns="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <UniformGrid Grid.Row="2" Columns="3" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <!-- Botón Administrar Rutinas -->
                 <Button Content="ADMINISTRAR RUTINAS" 
-                        Width="300" 
-                        Height="120" 
-                        Margin="20"
+                        Width="324" 
+                        Height="120"
                         FontSize="20"
                         FontWeight="Bold"
                         Foreground="White"
@@ -106,19 +98,48 @@
                         </Style>
                     </Button.Style>
                 </Button>
-
                 <!-- Botón Gestionar Administradores -->
                 <Button Content="GESTIONAR ADMINISTRADORES" 
-                        Width="300" 
-                        Height="120" 
-                        Margin="20"
+                     Margin="10"
+                     
+                     Width="347" 
+                     Height="120"
+                     FontSize="20"
+                     FontWeight="Bold"
+                     Foreground="White"
+                     Click="Button_GestionarAdministradores_Click">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Content="GESTIONAR ARTÍCULOS"
+                        HorizontalAlignment="Center"
+                        Width="336" 
+                        Height="120"
                         FontSize="20"
                         FontWeight="Bold"
                         Foreground="White"
                         Click="Button_GestionarAdministradores_Click">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">
-                            <Setter Property="Background" Value="#462AD8"/>
+                            <Setter Property="Background" Value="Coral"/>
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="{x:Type Button}">

@@ -36,53 +36,14 @@ namespace GymFlash.View
         // Método para el botón "Gestionar Administradores"
         private void Button_GestionarAdministradores_Click(object sender, RoutedEventArgs e)
         {
-            //var gestionAdminWindow = new GestionarAdministradoresWindow(_currentUser);
-            //gestionAdminWindow.Show();
-            //this.Close();
+            
         }
 
         // Método para cerrar sesión
         private void CerrarSesion_Click(object sender, RoutedEventArgs e)
         {
-            var loginWindow = new LoginWindow();
-            loginWindow.Show();
-            this.Close();
-        }
-
-        // Métodos para navegación (si los mantienes)
-        private void Button_Inicio_Click(object sender, RoutedEventArgs e)
-        {
-            // Si quieres que el admin también pueda ir al inicio
-            var homeWindow = new HomeWindow(_currentUser);
-            homeWindow.Show();
-            this.Close();
-        }
-
-        private void Button_Membresia_Click(object sender, RoutedEventArgs e)
-        {
-            var membresiaWindow = new Membresia(_currentUser);
-            membresiaWindow.Show();
-            this.Close();
-        }
-
-        private void Button_Rutinas_Click(object sender, RoutedEventArgs e)
-        {
-            var rutinasWindow = new RutinasWindow(_currentUser);
-            rutinasWindow.Show();
-            this.Close();
-        }
-
-        private void Button_Perfil_Click(object sender, RoutedEventArgs e)
-        {
-            var perfilWindow = new PerfilUsuario(_currentUser);
-            perfilWindow.Show();
-            this.Close();
-        }
-
-        private void Button_Tienda_Click(object sender, RoutedEventArgs e)
-        {
-            var tiendaWindow = new TiendaWindow(_currentUser);
-            tiendaWindow.Show();
+            var MainWindow = new MainWindow();
+            MainWindow.Show();
             this.Close();
         }
     }
