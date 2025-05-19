@@ -79,8 +79,18 @@ namespace GymFlash
                             return;
                         }
 
-                        HomeWindow home = new HomeWindow(usuario);
-                        home.Show();
+                        // Verificar el tipo de usuario
+                        if (usuario.ID_TipoUsuario == 1) // Administrador
+                        {
+                            PantallaAdmin adminWindow = new PantallaAdmin(usuario);
+                            adminWindow.Show();
+                        }
+                        else // Usuario normal
+                        {
+                            HomeWindow home = new HomeWindow(usuario);
+                            home.Show();
+                        }
+
                         this.Close();
                     }
                     else

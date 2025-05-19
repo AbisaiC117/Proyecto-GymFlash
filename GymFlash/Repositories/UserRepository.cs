@@ -20,9 +20,9 @@ namespace GymFlash.Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"INSERT INTO [User] 
-            (Username, Password, Name, Lastname, Email, Edad, Peso, Altura, IMC, ID_TipoMembresia) 
+            (Username, Password, Name, Lastname, Email, Edad, Peso, Altura, IMC, ID_TipoMembresia, ID_TipoUsuario) 
             VALUES 
-            (@username, @password, @name, @lastname, @email, @edad, @peso, @altura, @imc, @ID_TipoMembresia)";
+            (@username, @password, @name, @lastname, @email, @edad, @peso, @altura, @imc, @ID_TipoMembresia, @ID_TipoUsuario)";
 
                 command.Parameters.AddWithValue("@username", userModel.Username);
                 command.Parameters.AddWithValue("@password", userModel.Password);
@@ -34,6 +34,7 @@ namespace GymFlash.Repositories
                 command.Parameters.AddWithValue("@altura", float.Parse(userModel.Altura));
                 command.Parameters.AddWithValue("@imc", float.Parse(userModel.IMC));
                 command.Parameters.AddWithValue("@ID_TipoMembresia", userModel.ID_TipoMembresia);
+                command.Parameters.AddWithValue("@ID_TipoUsuario", userModel.ID_TipoUsuario);
 
                 command.ExecuteNonQuery();
             }
@@ -149,7 +150,8 @@ namespace GymFlash.Repositories
                             Peso = reader["Peso"].ToString(),
                             Altura = reader["Altura"].ToString(),
                             IMC = reader["IMC"].ToString(),
-                            ID_TipoMembresia = Convert.ToInt32(reader["ID_TipoMembresia"])
+                            ID_TipoMembresia = Convert.ToInt32(reader["ID_TipoMembresia"]),
+                            ID_TipoUsuario = Convert.ToInt32(reader["ID_TipoUsuario"])
                         };
                     }
                 }

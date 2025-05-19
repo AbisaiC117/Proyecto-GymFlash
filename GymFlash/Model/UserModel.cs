@@ -19,5 +19,6 @@ namespace GymFlash.Model
         public string Altura { get; set; }
         public string IMC { get; set; }
         public int ID_TipoMembresia { get; set; }
+        public int ID_TipoUsuario { get; set; }
     }
 }
