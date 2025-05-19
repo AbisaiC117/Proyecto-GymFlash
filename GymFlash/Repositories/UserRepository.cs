@@ -34,7 +34,6 @@ namespace GymFlash.Repositories
                 command.Parameters.AddWithValue("@altura", float.Parse(userModel.Altura));
                 command.Parameters.AddWithValue("@imc", float.Parse(userModel.IMC));
                 command.Parameters.AddWithValue("@ID_TipoMembresia", userModel.ID_TipoMembresia);
-                command.Parameters.AddWithValue("@ID_TipoUsuario", userModel.ID_TipoUsuario);
 
                 command.ExecuteNonQuery();
             }
