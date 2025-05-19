@@ -61,12 +61,19 @@
     <Compile Include="Repositories\ArticuloRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="ViewModel\AdminViewModel.cs" />
     <Compile Include="ViewModel\ArticuloViewModel.cs" />
     <Compile Include="ViewModel\LoginWindowModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelCommand.cs" />
+    <Compile Include="View\Admin\AddEditAdminWindow.xaml.cs">
+      <DependentUpon>AddEditAdminWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\EditarArticuloWindow.xaml.cs">
       <DependentUpon>EditarArticuloWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\GestionarAdmin.xaml.cs">
+      <DependentUpon>GestionarAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CompartirPerfil.xaml.cs">
       <DependentUpon>CompartirPerfil.xaml</DependentUpon>
@@ -106,7 +113,15 @@
       <DependentUpon>TiendaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WidthToHeightConverter.cs" />
+    <Page Include="View\Admin\AddEditAdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Admin\EditarArticuloWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Admin\GestionarAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,4 +1,5 @@
 ﻿using GymFlash.Model;
+using GymFlash.View.Admin;
 using GymFlash.View.PantallaAdmin;
 using System.Windows;
 
@@ -35,7 +36,9 @@ namespace GymFlash.View
         // Método para el botón "Gestionar Administradores"
         private void Button_GestionarAdministradores_Click(object sender, RoutedEventArgs e)
         {
-
+            GestionarAdmin adminWindow = new GestionarAdmin();
+            adminWindow.Show();
+            this.Close();
         }
 
         // Método para cerrar sesión

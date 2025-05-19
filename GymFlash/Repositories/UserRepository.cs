@@ -1,5 +1,6 @@
 ﻿using GymFlash.Model;
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Net;
 using System.Windows;
@@ -180,9 +181,83 @@ namespace GymFlash.Repositories
             throw new NotImplementedException();
         }
 
+        public bool UsernameExists(string username)
+        {
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT COUNT(1) FROM [User] WHERE Username = @username";
+                command.Parameters.AddWithValue("@username", username);
+
+                return (int)command.ExecuteScalar() > 0;
+            }
+        }
+
         public bool EmailExists(string email)
         {
-            throw new NotImplementedException();
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT COUNT(1) FROM [User] WHERE Email = @email";
+                command.Parameters.AddWithValue("@email", email);
+
+                return (int)command.ExecuteScalar() > 0;
+            }
+        }
+
+        // En UserRepository
+        public List<UserModel> GetAllUsers()
+        {
+            List<UserModel> users = new List<UserModel>();
+
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM [User]";
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        users.Add(new UserModel
+                        {
+                            Id = reader["Id"].ToString(),
+                            Username = reader["Username"].ToString(),
+                            Password = reader["Password"].ToString(),
+                            Name = reader["Name"].ToString(),
+                            Lastname = reader["LastName"].ToString(),
+                            Email = reader["Email"].ToString(),
+                            Edad = reader["Edad"].ToString(),
+                            Peso = reader["Peso"].ToString(),
+                            Altura = reader["Altura"].ToString(),
+                            IMC = reader["IMC"].ToString(),
+                            ID_TipoMembresia = (int)reader["ID_TipoMembresia"],
+                            ID_TipoUsuario = (int)reader["ID_TipoUsuario"]
+                        });
+                    }
+                }
+            }
+            return users;
+        }
+
+        public bool DeleteAdmin(Guid userId)
+        {
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "DELETE FROM [User] WHERE ID = @userId AND ID_TipoUsuario = 1";
+                command.Parameters.AddWithValue("@userId", userId);
+
+                return command.ExecuteNonQuery() > 0;
+            }
         }
     }
 }
