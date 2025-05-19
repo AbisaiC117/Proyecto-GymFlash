@@ -84,6 +84,9 @@
     <Compile Include="View\MembresiaComprada.xaml.cs">
       <DependentUpon>MembresiaComprada.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PantallaAdmin\PantallaAdmin.xaml.cs">
+      <DependentUpon>PantallaAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PerfilUsuario.xaml.cs">
       <DependentUpon>PerfilUsuario.xaml</DependentUpon>
     </Compile>
@@ -143,6 +146,10 @@
     <Page Include="View\MembresiaComprada.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PantallaAdmin\PantallaAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PerfilUsuario.xaml">
       <SubType>Designer</SubType>
