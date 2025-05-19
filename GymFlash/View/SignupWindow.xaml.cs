@@ -150,7 +150,9 @@ namespace GymFlash.View
                 Peso = peso,
                 Altura = altura,
                 IMC = imcVal.ToString("F2"),
-                ID_TipoMembresia = 1 // Asignar un ID de membresía por defecto
+                ID_TipoMembresia = 1, // Asignar un ID de membresía por defecto
+                ID_TipoUsuario = 2 // para crear un usuario siempre sera normal, si se ocupa un admin pues se hace en la base de datos
+                                   // para evitar que usuarios normales accedan como administradores
             };
 
             try

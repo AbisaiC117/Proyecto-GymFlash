@@ -21,10 +21,18 @@ namespace GymFlash.View
         {
             try
             {
-                // Calcular IMC automáticamente al guardar
-                if (float.Parse(_usuario.Altura) > 0)
+                // Validar y convertir valores
+                if (float.TryParse(_usuario.Altura, out float altura) && altura > 0 &&
+                    float.TryParse(_usuario.Peso, out float peso))
                 {
-                    _usuario.IMC = ""+(float.Parse(_usuario.Peso) / (float.Parse(_usuario.Altura) * float.Parse(_usuario.Altura)));
+                    // Calcular IMC con formato controlado
+                    float imcCalculado = peso / (altura * altura);
+                    _usuario.IMC = imcCalculado.ToString("0.00"); // Formato con 2 decimales
+                }
+                else
+                {
+                    MessageBox.Show("Altura y peso deben ser valores numéricos positivos");
+                    return;
                 }
 
                 // Crear repositorio (sin argumentos)

@@ -34,6 +34,7 @@ namespace GymFlash.Repositories
                 command.Parameters.AddWithValue("@altura", float.Parse(userModel.Altura));
                 command.Parameters.AddWithValue("@imc", float.Parse(userModel.IMC));
                 command.Parameters.AddWithValue("@ID_TipoMembresia", userModel.ID_TipoMembresia);
+                command.Parameters.AddWithValue("@ID_TipoUsuario", userModel.ID_TipoUsuario);
 
                 command.ExecuteNonQuery();
             }
@@ -149,8 +150,8 @@ namespace GymFlash.Repositories
                             Peso = reader["Peso"].ToString(),
                             Altura = reader["Altura"].ToString(),
                             IMC = reader["IMC"].ToString(),
-                            ID_TipoMembresia = Convert.ToInt32(reader["ID_TipoMembresia"]),
-                            ID_TipoUsuario = Convert.ToInt32(reader["ID_TipoUsuario"])
+                            ID_TipoMembresia = (int)(reader["ID_TipoMembresia"]),
+                            ID_TipoUsuario = (int)reader["ID_TipoUsuario"]
                         };
                     }
                 }

@@ -64,7 +64,13 @@ namespace GymFlash.View
         {
 
         }
+        //boton para cerrar sesion yy nos regresa a login
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
+        }
     }
 }
