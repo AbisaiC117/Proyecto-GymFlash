@@ -56,12 +56,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\ArticuloModel.cs" />
+    <Compile Include="Model\EntrenadorModel.cs" />
+    <Compile Include="Model\RutinaModel.cs" />
     <Compile Include="Model\IUserRepository.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Repositories\ArticuloRepository.cs" />
+    <Compile Include="Repositories\RutinaRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="ViewModel\AdminViewModel.cs" />
     <Compile Include="ViewModel\ArticuloViewModel.cs" />
     <Compile Include="ViewModel\LoginWindowModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />

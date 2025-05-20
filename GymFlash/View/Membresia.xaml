@@ -60,9 +60,9 @@
            Foreground="White" Margin="15,0" VerticalAlignment="Center" />
                         <StackPanel Orientation="Horizontal" Width="361" DockPanel.Dock="Left">
                             <Button Content="Inicio" Click="Button_Inicio" Style="{StaticResource NormalButtonStyle}" />
-                            <Button Content="Membresías" Click="Button_Membresia" Style="{StaticResource NormalButtonStyle}" />
+                            <Button Content="Membresías" Click="Button_Membresia" Style="{StaticResource MenuButtonStyle}" />
                             <Button Content="Rutinas" Click="Button_Rutinas" Style="{StaticResource NormalButtonStyle}" />
-                            <Button Content="Perfil" Click="Button_Perfil" Style="{StaticResource MenuButtonStyle}" />
+                            <Button Content="Perfil" Click="Button_Perfil" Style="{StaticResource NormalButtonStyle}" />
                             <Button Content="Tienda" Click="Button_Tienda" Style="{StaticResource NormalButtonStyle}" />
                         </StackPanel>
                     </DockPanel>

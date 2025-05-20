@@ -1,6 +1,10 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Windows;
 using System.Windows.Controls;
 using GymFlash.Model;
+using GymFlash.Repositories;
 using GymFlash.View;
 
 namespace GymFlash
@@ -8,54 +12,76 @@ namespace GymFlash
     public partial class RutinasWindow : Window
     {
         private UserModel usuario;
+        private RutinaRepository rutinaRepo;
+
+        public List<RutinaModel> Rutina { get; set; }
+
         public RutinasWindow(UserModel usuario)
         {
             InitializeComponent();
             this.usuario = usuario;
+            this.rutinaRepo = new RutinaRepository();
+            CargarRutinas();
+            DataContext = this;
         }
+
+        private void CargarRutinas()
+        {
+            Rutina = rutinaRepo.GetAllRutinas();
+        }
+
         private void Inicio_Click(object sender, RoutedEventArgs e)
         {
-            HomeWindow ventanaInicio = new HomeWindow(usuario);
-            ventanaInicio.Show();
+            new HomeWindow(usuario).Show();
             this.Close();
         }
 
         private void Membresias_Click(object sender, RoutedEventArgs e)
         {
-            Membresia ventanaMembresias = new Membresia(usuario);
-            ventanaMembresias.Show();
+            new Membresia(usuario).Show();
             this.Close();
         }
 
-        private void Rutinas_Click(object sender, RoutedEventArgs e)
-        {
-            // Ya estás en esta ventana
-        }
+        private void Rutinas_Click(object sender, RoutedEventArgs e) { }
 
         private void Perfil_Click(object sender, RoutedEventArgs e)
         {
-            PerfilUsuario ventanaPerfil = new PerfilUsuario(usuario);
-            ventanaPerfil.Show();
+            new PerfilUsuario(usuario).Show();
             this.Close();
         }
 
         private void Tienda_Click(object sender, RoutedEventArgs e)
         {
-            TiendaWindow tiendaWindow = new TiendaWindow(usuario);
-            tiendaWindow.Show();
+            new TiendaWindow(usuario).Show();
             this.Close();
         }
 
-        private void GenerarPDF_Click(object sender, RoutedEventArgs e)
+        public RelayCommand GenerarTXTCommand => new RelayCommand((obj) =>
         {
-            if (sender is Button btn && btn.Tag != null)
+            if (obj is RutinaModel rutina)
             {
-                string rutinaId = btn.Tag.ToString();
-                // TODO: Lógica para generar el PDF basado en el ID
-                MessageBox.Show($"Generar PDF para la rutina con ID: {rutinaId}", "PDF", MessageBoxButton.OK, MessageBoxImage.Information);
+                var entrenador = rutinaRepo.GetEntrenadorInfo(rutina.IdEntrenador);
 
-               
+                string nombreArchivo = $"Rutina_{rutina.Nombre.Replace(" ", "_")}_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
+                string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), nombreArchivo);
+
+                using (StreamWriter writer = new StreamWriter(path))
+                {
+                    writer.WriteLine("GYMFLASH - RUTINA PERSONALIZADA");
+                    writer.WriteLine("--------------------------------------");
+                    writer.WriteLine($"Nombre de la Rutina: {rutina.Nombre}");
+                    writer.WriteLine($"Descripción: {rutina.Descripcion}");
+                    writer.WriteLine();
+                    writer.WriteLine("Entrenador Asignado:");
+                    writer.WriteLine($"Nombre: {entrenador.nombreEntrenador}");
+                    writer.WriteLine($"Especialidad: {entrenador.especialidad}");
+                    writer.WriteLine($"Años de Experiencia: {entrenador.aniosExperiencia}");
+                    writer.WriteLine();
+                    writer.WriteLine($"Fecha de Generación: {DateTime.Now:dd/MM/yyyy HH:mm}");
+                }
+
+                MessageBox.Show("Archivo generado correctamente:\n" + path, "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-        }
+        });
     }
 }
