@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Gestión de Administradores" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen"
-        Style="{StaticResource {x:Type Window}}">
+        Style="{StaticResource {x:Type Window}}"
+        WindowState="Maximized">
 
     <Grid Margin="20">
         <Grid.RowDefinitions>
@@ -71,10 +72,10 @@
 
         <!-- Pie de página -->
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
-            <Button Content="Cerrar" 
-                    Click="BtnClose_Click"
+            <Button Content="Volver" 
                     Style="{StaticResource CancelButtonStyle}"
-                    Width="80"/>
+                    Width="80"
+                    Click="Volver_Button"/>
         </StackPanel>
     </Grid>
 </Window>

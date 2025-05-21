@@ -60,7 +60,7 @@ namespace GymFlash
         {
             if (obj is RutinaModel rutina)
             {
-                var entrenador = rutinaRepo.GetEntrenadorInfo(rutina.IdEntrenador);
+                var entrenador = rutinaRepo.GetEntrenadorInfo(rutina.ID_Entrenador);
 
                 string nombreArchivo = $"Rutina_{rutina.Nombre.Replace(" ", "_")}_{DateTime.Now:yyyyMMdd_HHmmss}.txt";
                 string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), nombreArchivo);
@@ -71,6 +71,7 @@ namespace GymFlash
                     writer.WriteLine("--------------------------------------");
                     writer.WriteLine($"Nombre de la Rutina: {rutina.Nombre}");
                     writer.WriteLine($"Descripción: {rutina.Descripcion}");
+
                     writer.WriteLine();
                     writer.WriteLine("Entrenador Asignado:");
                     writer.WriteLine($"Nombre: {entrenador.nombreEntrenador}");

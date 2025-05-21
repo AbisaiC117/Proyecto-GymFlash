@@ -90,9 +90,19 @@ namespace GymFlash.View.Admin
             LoadAdmins();
         }
 
-        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        private void Volver_Button(object sender, RoutedEventArgs e)
         {
+
+            UserModel currentUser = ObtenerUsuarioActual();
+            AdminPanelWindow adminPanelWindow = new AdminPanelWindow(currentUser);
+            adminPanelWindow.Show();
             this.Close();
+        }
+
+
+        private UserModel ObtenerUsuarioActual()
+        {
+            return new UserModel();
         }
     }
 }

@@ -2,6 +2,8 @@
 using GymFlash.View.Admin;
 using GymFlash.View.PantallaAdmin;
 using System.Windows;
+using GymFlash.View;
+
 
 namespace GymFlash.View
 {
@@ -28,10 +30,11 @@ namespace GymFlash.View
         // Método para el botón "Administrar Rutinas"
         private void Button_AdministrarRutinas_Click(object sender, RoutedEventArgs e)
         {
-            //var rutinasAdminWindow = new AdministrarRutinasWindow(_currentUser);
-            //rutinasAdminWindow.Show();
-            //this.Close();
+            RutinasAdminWindow rutinasAdmin = new RutinasAdminWindow();
+            rutinasAdmin.Show();
+            this.Close();
         }
+
 
         // Método para el botón "Gestionar Administradores"
         private void Button_GestionarAdministradores_Click(object sender, RoutedEventArgs e)
