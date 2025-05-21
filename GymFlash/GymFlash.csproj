@@ -57,12 +57,12 @@
     </ApplicationDefinition>
     <Compile Include="Model\ArticuloModel.cs" />
     <Compile Include="Model\EntrenadorModel.cs" />
-    <Compile Include="Model\RutinaModel.cs" />
     <Compile Include="Model\IUserRepository.cs" />
+    <Compile Include="Model\RutinaModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Repositories\ArticuloRepository.cs" />
-    <Compile Include="Repositories\RutinaRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\RutinaRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="ViewModel\ArticuloViewModel.cs" />
     <Compile Include="ViewModel\LoginWindowModel.cs" />
@@ -71,14 +71,14 @@
     <Compile Include="View\Admin\AddEditAdminWindow.xaml.cs">
       <DependentUpon>AddEditAdminWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Admin\AgregarRutinaWindow.xaml.cs">
-      <DependentUpon>AgregarRutinaWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Admin\EditarArticuloWindow.xaml.cs">
       <DependentUpon>EditarArticuloWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\GestionarAdmin.xaml.cs">
       <DependentUpon>GestionarAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\AgregarRutinaWindow.xaml.cs">
+      <DependentUpon>AgregarRutinaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\RutinasAdminWindow.xaml.cs">
       <DependentUpon>RutinasAdminWindow.xaml</DependentUpon>
@@ -125,15 +125,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Admin\AgregarRutinaWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Admin\EditarArticuloWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Admin\GestionarAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Admin\AgregarRutinaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

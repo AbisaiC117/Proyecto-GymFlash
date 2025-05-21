@@ -56,16 +56,6 @@ CREATE TABLE UsuarioRutina (
     FOREIGN KEY (ID_Rutina) REFERENCES Rutina(ID_Rutina)
 );
 
-CREATE TABLE Ejercicio (
-    ID_Ejercicio UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
-    ID_Rutina UNIQUEIDENTIFIER,
-    Nombre NVARCHAR(100),
-    Repeticiones NVARCHAR(50),
-    Duracion NVARCHAR(50),
-    ImagenURL NVARCHAR(300),
-    FOREIGN KEY (ID_Rutina) REFERENCES Rutina(ID_Rutina)
-);
-
 CREATE TABLE Articulos (
     Id INT PRIMARY KEY IDENTITY(1,1),
     Nombre NVARCHAR(100),

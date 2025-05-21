@@ -1,0 +1,70 @@
+﻿<Window x:Class="GymFlash.View.RutinasAdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:GymFlash.Model"
+        Title="Administrar Rutinas"
+        Height="600" Width="900"
+        WindowStartupLocation="CenterScreen"
+        Background="White"
+        WindowState="Maximized">
+
+    <Window.Resources>
+        <Style x:Key="BotonPrincipal" TargetType="Button">
+            <Setter Property="Background" Value="#7B0000"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Botones superiores -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Agregar Rutina"
+                    Style="{StaticResource BotonPrincipal}"
+                    Click="AgregarRutina_Click"/>
+            <Button Content="Eliminar Rutina"
+                    Style="{StaticResource BotonPrincipal}"
+                    Background="DarkRed"
+                    Click="EliminarRutina_Click"/>
+            <Button Content="Volver" 
+                    Style="{StaticResource BotonPrincipal}"
+                    Background="DarkRed"
+                    Click="Volver_Button"/>
+
+        </StackPanel>
+
+        <!-- Lista de rutinas -->
+        <ListView x:Name="lvRutinas"
+                  Grid.Row="1"
+                  ItemsSource="{Binding Rutinas}"
+                  SelectedItem="{Binding RutinaSeleccionada}"
+                  Margin="0,10,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nombre"
+                                    DisplayMemberBinding="{Binding Nombre}"
+                                    Width="150"/>
+                    <GridViewColumn Header="Descripción"
+                                    DisplayMemberBinding="{Binding Descripcion}"
+                                    Width="300"/>
+                    <GridViewColumn Header="ID_Entrenador"
+                                    DisplayMemberBinding="{Binding ID_Entrenador}"
+                                    Width="200"/>
+                    <GridViewColumn Header="ImagenURL"
+                                    DisplayMemberBinding="{Binding ImagenURL}"
+                                    Width="200"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
